@@ -467,6 +467,9 @@ config NRFX_WDT1
 	bool "Enable WDT1 instance"
 	depends on HAS_HW_NRF_WDT1
 	select NRFX_WDT
+	
+config NRFX_PM
+	bool "Enable Power Management feature"
 
 config NRFX_PRS
 	bool "Enable Peripheral Resource Sharing module"
