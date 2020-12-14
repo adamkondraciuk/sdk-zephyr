@@ -21,6 +21,8 @@ manifest:
   remotes:
     - name: upstream
       url-base: https://github.com/zephyrproject-rtos
+    - name: my_hal
+      url-base: https://github.com/adamkondraciuk
 
   #
   # Please add items below based on alphabetical order
@@ -56,8 +58,9 @@ manifest:
       revision: f1fa8241f8786198ba41155413243de36ed878a5
       path: modules/hal/infineon
     - name: hal_nordic
-      revision: 6038f912fd34fdd46dbf017057908f979e298341
+      revision: pm_master
       path: modules/hal/nordic
+      remote: my_hal
     - name: hal_openisa
       revision: 40d049f69c50b58ea20473bee14cf93f518bf262
       path: modules/hal/openisa
@@ -144,3 +147,4 @@ manifest:
   self:
     path: zephyr
     west-commands: scripts/west-commands.yml
+

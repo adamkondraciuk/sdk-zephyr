@@ -471,6 +471,9 @@ config NRFX_WDT1
 config NRFX_PM
 	bool "Enable Power Management feature"
 
+config NRFX_RTN
+	bool "Enable retention feature"
+
 config NRFX_PRS
 	bool "Enable Peripheral Resource Sharing module"
 
