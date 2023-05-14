@@ -61,10 +61,6 @@
 			gpios = <&gpio0 12 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
 			label = "Push button switch 1";
 		};
-		button2: button_2 {
-			gpios = <&gpio0 24 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
-			label = "Push button switch 2";
-		};
 		button3: button_3 {
 			gpios = <&gpio0 25 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
 			label = "Push button switch 3";
@@ -120,7 +116,6 @@
 		pwm-led0 = &pwm_led0;
 		sw0 = &button0;
 		sw1 = &button1;
-		sw2 = &button2;
 		sw3 = &button3;
 		bootloader-led0 = &led0;
 		mcuboot-button0 = &button0;
@@ -156,6 +151,7 @@
 };
 
 arduino_serial: &uart1 {
+	status = "okay";
 	current-speed = <115200>;
 	pinctrl-0 = <&uart1_default>;
 	pinctrl-1 = <&uart1_sleep>;
@@ -196,7 +192,7 @@ arduino_i2c: &i2c0 {
 };
 
 &spi1 {
-	compatible = "nordic,nrf-spi";
+	compatible = "nordic,nrf-spim";
 	status = "okay";
 	pinctrl-0 = <&spi1_default>;
 	pinctrl-1 = <&spi1_sleep>;
@@ -212,7 +208,6 @@ arduino_i2c: &i2c0 {
 };
 
 &qspi {
-	status = "okay";
 	pinctrl-0 = <&qspi_default>;
 	pinctrl-1 = <&qspi_sleep>;
 	pinctrl-names = "default", "sleep";
@@ -239,7 +234,6 @@ arduino_i2c: &i2c0 {
 };
 
 arduino_spi: &spi3 {
-	status = "okay";
 	cs-gpios = <&arduino_header 16 GPIO_ACTIVE_LOW>; /* D10 */
 	pinctrl-0 = <&spi3_default>;
 	pinctrl-1 = <&spi3_sleep>;
