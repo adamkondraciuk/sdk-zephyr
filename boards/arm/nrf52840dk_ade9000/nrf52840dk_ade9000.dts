@@ -42,6 +42,22 @@
 			gpios = <&gpio0 16 GPIO_ACTIVE_LOW>;
 			label = "Green LED 3";
 		};
+		ade9000pm0: ade9000_pm0 {
+			gpios = <&gpio0 29 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+			label = "ADE9000 PM0 pin";
+		};
+		ade9000pm1: ade9000_pm1 {
+			gpios = <&gpio0 2 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
+			label = "ADE9000 PM1 pin";
+		};
+		ade9000reset: ade9000_reset {
+			gpios = <&gpio1 15 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			label = "ADE9000 RESET pin";
+		};
+		ade9000drdy: ade9000_drdy {
+			gpios = <&gpio0 20 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+			label = "ADE9000 DRDY pin";
+		};
 	};
 
 	pwmleds {
@@ -65,6 +81,10 @@
 			gpios = <&gpio0 25 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
 			label = "Push button switch 3";
 		};
+	};
+
+	ade9000pins {
+
 	};
 
 	arduino_header: connector {
@@ -113,6 +133,10 @@
 		led1 = &led1;
 		led2 = &led2;
 		led3 = &led3;
+		ade9000pm0 = &ade9000pm0;
+		ade9000pm1 = &ade9000pm1;
+		ade9000reset = &ade9000reset;
+		ade9000drdy = &ade9000drdy;
 		pwm-led0 = &pwm_led0;
 		sw0 = &button0;
 		sw1 = &button1;
