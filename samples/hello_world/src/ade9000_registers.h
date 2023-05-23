@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023 ELMODIS Ltd.
+ */
+
 #include <zephyr/sys/util.h>
 
 #define NB_OF_PHASES			3
@@ -558,7 +562,7 @@ typedef struct ade9000_irq_status_t{
 
 typedef union ade9000_reg32_t{
   uint32_t v;
-  struct{
+  struct {
       uint32_t ISUM_CFG        : 2;
       uint32_t RESERVED1       : 1;
       uint32_t HPFDIS          : 1;
@@ -574,7 +578,7 @@ typedef union ade9000_reg32_t{
       uint32_t DISRPLPF        : 1;    
       uint32_t RESERVED        : 18;
     }S_CONFIG0;
-    struct{
+    struct {
       uint16_t SWRST           :1;
       uint16_t CF3_CFG         :1;
       uint16_t CF4_CFG         :2;
@@ -588,15 +592,15 @@ typedef union ade9000_reg32_t{
       uint16_t RESERVED4       :2;
       uint16_t EXT_REF         :1;
     }S_CONFIG1;
-    struct{
+    struct {
       uint32_t AREGION           : 4;
       uint32_t RESERVED          : 28;
     }S_AMTREGION;
-    struct{
+    struct {
       uint16_t Start : 1;
       uint16_t RESERVED : 15;
     }S_RUN;
-    struct{
+    struct {
       uint16_t IA_GAIN  : 2;
       uint16_t IB_GAIN  : 2;
       uint16_t IC_GAIN  : 2;
@@ -606,13 +610,13 @@ typedef union ade9000_reg32_t{
       uint16_t VC_GAIN  : 2;
       uint16_t RESERVED : 2;
     }S_PGA_GAIN;
-    struct{
+    struct {
       uint16_t RESERVED : 9;
       uint16_t HPF_CRN  : 3;
       uint16_t UPERIOD_SEL : 1;
       uint16_t RESERVED1 : 3;
     }S_CONFIG2;
-    struct{
+    struct {
       uint16_t BURST_CHAN : 4;
       uint16_t WF_CAP_EN : 1;
       uint16_t WF_CAP_SEL : 1;
@@ -622,7 +626,7 @@ typedef union ade9000_reg32_t{
       uint16_t WF_IN_EN : 1;
       uint16_t RESERVED1 : 3;
     }S_WFB_CFG;
-    struct{
+    struct {
       uint16_t DIP : 1;
       uint16_t SWELL : 1;
       uint16_t OI : 1;
@@ -636,12 +640,12 @@ typedef union ade9000_reg32_t{
       uint16_t TRIG_FORCE : 1;
       uint16_t RESERVED : 5;     
     }S_WFB_TRG_CFG;
-    struct{
+    struct {
       uint16_t WFB_TRIG_ADDR : 11;
       uint16_t RESERVED : 1;
       uint16_t WFB_LAST_PAGE : 4;      
     }S_WFB_TRG_STAT;
-    struct{
+    struct {
       uint16_t EGY_PWR_EN : 1;
       uint16_t EGY_TMR_MODE : 1;
       uint16_t RESERVED : 2;
@@ -652,7 +656,7 @@ typedef union ade9000_reg32_t{
       uint16_t RESERVED1 : 5;
       uint16_t NOLOAD_TMR : 3;
     }S_EP_CFG;
-    struct{
+    struct {
       uint32_t RESERVED1 : 16;
       uint32_t ADE9004_ID : 1;
       uint32_t RESERVED2 : 3;
@@ -660,7 +664,7 @@ typedef union ade9000_reg32_t{
       uint32_t ADE73370_ID : 1;
       uint32_t RESERVED3 : 10;
     }S_PART_ID;
-    struct{
+    struct {
       uint16_t WATTACC : 2;
       uint16_t VARACC : 2;
       uint16_t VCONEL : 3;
@@ -678,4 +682,4 @@ typedef union ade9000_reg32_t{
     status1_t S_MASK1;
     status0_t S_STATUS0;
     status1_t S_STATUS1;
-}ade9000_reg32_t;
+} ade9000_reg32_t;

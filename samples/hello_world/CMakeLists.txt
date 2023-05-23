@@ -1,4 +1,4 @@
-# SPDX-License-Identifier: Apache-2.0
+# Copyright (c) 2023 ELMODIS Ltd.
 
 cmake_minimum_required(VERSION 3.20.0)
 
@@ -8,4 +8,6 @@ project(hello_world)
 target_sources(app PRIVATE
     src/main.c
     src/ade9000.c
+    src/ade9000Estimates.c
+    src/ade9000Interface.c
 )
