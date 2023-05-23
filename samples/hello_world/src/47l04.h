@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023 ELMODIS Ltd.
+ */
+
 #define L04_ADDR           0x20
 #define L04_SCL_PIN        27
 #define L04_SDA_PIN        26

@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2023 ELMODIS Ltd.
+ */
+
 #define R_AIGAIN		0x4380
 #define R_AVGAIN		0x4381
 #define R_BIGAIN		0x4382

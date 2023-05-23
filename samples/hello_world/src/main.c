@@ -33,8 +33,8 @@ void main(void)
 	gpio_pin_toggle_dt(&led);
 
 	// TODO: error handling
-	//init_leds();
-	//(void)test_leds();
+	init_leds();
+	(void)test_leds();
     
 	if (!ADE9000Init()) {
 		printk("Error while initializing ADE9000\n");
