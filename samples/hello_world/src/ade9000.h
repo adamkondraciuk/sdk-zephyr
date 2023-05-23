@@ -1,11 +1,12 @@
+/*
+ * Copyright (c) 2023 ELMODIS Ltd.
+ */
+
 #ifndef ADE9000_H
 #define ADE9000_H
 
 #include <stdbool.h>
 
-/**
- * 
-*/
 bool ADE9000Init(void);
 
 void ADE9000MeasParamsSet(void);

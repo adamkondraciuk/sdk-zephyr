@@ -58,6 +58,26 @@
 			gpios = <&gpio0 20 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
 			label = "ADE9000 DRDY pin";
 		};
+		ade9000cf1: ade9000_cf1 {
+			gpios = <&gpio0 13 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+			label = "ADE9000 CF1 pin";
+		};
+		ade9000cf2: ade9000_cf2 {
+			gpios = <&gpio0 15 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+			label = "ADE9000 CF2 pin";
+		};
+		ade9000cf3: ade9000_cf3 {
+			gpios = <&gpio0 17 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+			label = "ADE9000 CF3 pin";
+		};
+		ade9000irq1: ade9000_irq1 {
+			gpios = <&gpio0 9 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+			label = "ADE9000 IRQ1 pin";
+		};
+		ade9000irq0: ade9000_irq0 {
+			gpios = <&gpio0 10 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
+			label = "ADE9000 IRQ1 pin";
+		};
 	};
 
 	pwmleds {
@@ -137,6 +157,11 @@
 		ade9000pm1 = &ade9000pm1;
 		ade9000reset = &ade9000reset;
 		ade9000drdy = &ade9000drdy;
+		ade9000cf1 = &ade9000cf1;
+		ade9000cf2 = &ade9000cf2;
+		ade9000cf3 = &ade9000cf3;
+		ade9000irq0 = &ade9000irq0;
+		ade9000irq1 = &ade9000irq1;
 		pwm-led0 = &pwm_led0;
 		sw0 = &button0;
 		sw1 = &button1;

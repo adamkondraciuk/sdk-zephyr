@@ -1,34 +1,39 @@
-#include "nrfx_spim.h"
+/*
+ * Copyright (c) 2023 ELMODIS Ltd.
+ */
 
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/kernel.h>
 #if 1
 #include <zephyr/sys/printk.h>
 #endif
-#include <stdlib.h>
-#include <string.h>
+
 #include "ade9000_registers.h"
-
-// SPI interface pins on nRF52840 development kit
-
-//TODO: Get it from DeviceTree
-#define ADE9000_CS_PIN   0x1F // 31
-#define ADE9000_MOSI_PIN 0X20 // 32
-#define ADE9000_MISO_PIN 0x18 // 24
-#define ADE9000_SCK_PIN  0x13 // default 22
+#include "ade9000Estimates.h"
 
 #define ADE9000_PM0_NODE   DT_ALIAS(ade9000pm0)
 #define ADE9000_PM1_NODE   DT_ALIAS(ade9000pm1)
 #define ADE9000_RESET_NODE DT_ALIAS(ade9000reset)
 #define ADE9000_DRDY_NODE  DT_ALIAS(ade9000drdy)
+#define ADE9000_CF1_NODE  DT_ALIAS(ade9000cf1)
+#define ADE9000_CF2_NODE  DT_ALIAS(ade9000cf2)
+#define ADE9000_CF3_NODE  DT_ALIAS(ade9000cf3)
+#define ADE9000_IRQ0_NODE  DT_ALIAS(ade9000irq0)
+#define ADE9000_IRQ1_NODE  DT_ALIAS(ade9000irq1)
+
+// TODO: Move out and rework when error handling will be finished.
+#define CHECK_RESULT_BOOL(expression) \
+        if (!expression) return false;
 
 static const struct gpio_dt_spec pm0   = GPIO_DT_SPEC_GET(ADE9000_PM0_NODE, gpios);
 static const struct gpio_dt_spec pm1   = GPIO_DT_SPEC_GET(ADE9000_PM1_NODE, gpios);
 static const struct gpio_dt_spec reset = GPIO_DT_SPEC_GET(ADE9000_RESET_NODE, gpios);
 static const struct gpio_dt_spec drdy  = GPIO_DT_SPEC_GET(ADE9000_DRDY_NODE, gpios);
-
-// SPI frequency (Hz)
-#define SPI_FREQ         1000000
+static const struct gpio_dt_spec cf1   = GPIO_DT_SPEC_GET(ADE9000_CF1_NODE, gpios);
+static const struct gpio_dt_spec cf2   = GPIO_DT_SPEC_GET(ADE9000_CF2_NODE, gpios);
+static const struct gpio_dt_spec cf3   = GPIO_DT_SPEC_GET(ADE9000_CF3_NODE, gpios);
+static const struct gpio_dt_spec irq0  = GPIO_DT_SPEC_GET(ADE9000_IRQ0_NODE, gpios);
+static const struct gpio_dt_spec irq1  = GPIO_DT_SPEC_GET(ADE9000_IRQ1_NODE, gpios);
 
 typedef enum {
     PM_Reduced = 0,
@@ -42,95 +47,10 @@ typedef enum {
 
 #define TEST_MES  0xCFE
 
-// static K_SEM_DEFINE(transfer_finished, 0, 1);
-
-static volatile uint8_t m_rx_buffer[] = {0x00 , 0x00 , 0x00 , 0x00, 0x00, 0x00, 0x00, 0x00,0x00 , 0x00 , 0x00 , 0x00, 0x00, 0x00, 0x00, 0x00,
-                         0x00 , 0x00 , 0x00 , 0x00, 0x00, 0x00, 0x00, 0x00,0x00 , 0x00 , 0x00 , 0x00, 0x00, 0x00, 0x00, 0x00};
-static volatile uint8_t m_tx_buffer[] = {0x00 , 0x00 , 0x00 , 0x00, 0x00, 0x00, 0x00, 0x00,0x00 , 0x00 , 0x00 , 0x00, 0x00, 0x00, 0x00, 0x00};
-
-static volatile bool spi_flag = true;
-
-static void spim_handler(const nrfx_spim_evt_t *p_event, void *p_context)
-{
-	if (p_event->type == NRFX_SPIM_EVENT_DONE) {
-        spi_flag = true;
-        memset((void*)m_tx_buffer , 0 , sizeof(m_tx_buffer));
-	}
-}
-
-static const nrfx_spim_t spi_inst = NRFX_SPIM_INSTANCE(1);
-
-static nrfx_err_t RegWrite(uint16_t addr , uint8_t data[] , unsigned char lenght){
-    while(!spi_flag);
-    spi_flag = false;
-    m_tx_buffer[0] = (uint8_t)(addr >> 8);
-    m_tx_buffer[1] = (uint8_t)addr;
-    memcpy((void*)(m_tx_buffer + 2) , data , sizeof(uint8_t) * lenght);
-    m_tx_buffer[1] |= 0x08;
-#if 1
-    printk("W:");
-    for (uint32_t i = 0; i < (2 + lenght); i++)
-    {
-        printk(" %02X", m_tx_buffer[i]);
-    }
-    printk("\n");
-#endif
-    nrfx_spim_xfer_desc_t spim_xfer_desc = NRFX_SPIM_XFER_TX(m_tx_buffer, 2 + lenght);
-    nrfx_err_t err = nrfx_spim_xfer(&spi_inst, &spim_xfer_desc, 0);
-    if (err != NRFX_SUCCESS)
-    {
-        printk("Err code: %x\n", err);
-    }
-    return err;
-}
-
-static nrfx_err_t RegRead(uint16_t addr ,uint8_t rcv_data[] , unsigned char rcv_lenght){
-    while(!spi_flag);
-    m_tx_buffer[0] = (uint8_t)(addr >> 8);
-    m_tx_buffer[1] = (uint8_t)addr;
-#if 1
-    printk("WR:");
-    for (uint32_t i = 0; i < 2; i++)
-    {
-        printk(" %02X", m_tx_buffer[i]);
-    }
-#endif
-    //memcpy(tmp_send+2 , data , sizeof(uint8_t) * lenght);
-    nrfx_spim_xfer_desc_t spim_xfer_desc = NRFX_SPIM_XFER_TRX(m_tx_buffer, 2 , rcv_data , rcv_lenght + 2);
-    nrfx_err_t err = nrfx_spim_xfer(&spi_inst, &spim_xfer_desc, 0);
-#if 1
-    if (err == NRFX_SUCCESS)
-    {
-        printk("<->");
-        for (uint32_t i = 0; i < rcv_lenght; i++)
-        {
-            printk(" %02X", rcv_data[i]); 
-        }
-        printk("\n");
-    }
-    else
-    {
-        printk("Err code: %x\n", err);
-    }
-#endif
-    return err;
-}
-
-static bool SPIInit(void)
-{
-    nrfx_spim_config_t spi_config = NRFX_SPIM_DEFAULT_CONFIG(ADE9000_SCK_PIN,
-                                                             ADE9000_MOSI_PIN,
-                                                             ADE9000_MISO_PIN,
-                                                             ADE9000_CS_PIN);
-
-    return nrfx_spim_init(&spi_inst, &spi_config, spim_handler, NULL) == NRFX_SUCCESS ?
-           true : false;
-}
-
 static bool GPIOConfig(void)
 {
     int ret;
-
+    // TODO: Looks bad. Array of pins to be initialized/configured
     if (!device_is_ready(reset.port)) {
 		return false;
 	}
@@ -165,6 +85,53 @@ static bool GPIOConfig(void)
 	if (ret < 0) {
 		return false;
 	}
+
+    if (!device_is_ready(cf1.port)) {
+		return false;
+	}
+	ret = gpio_pin_configure_dt(&cf1, GPIO_INPUT);
+	if (ret < 0) {
+		return false;
+	}
+
+    if (!device_is_ready(cf2.port)) {
+		return false;
+	}
+	ret = gpio_pin_configure_dt(&cf2, GPIO_INPUT);
+	if (ret < 0) {
+		return false;
+	}
+
+    if (!device_is_ready(cf3.port)) {
+		return false;
+	}
+	ret = gpio_pin_configure_dt(&cf3, GPIO_INPUT);
+	if (ret < 0) {
+		return false;
+	}
+
+    if (!device_is_ready(irq0.port)) {
+		return false;
+	}
+	ret = gpio_pin_configure_dt(&irq0, GPIO_INPUT);
+	if (ret < 0) {
+		return false;
+	}
+
+    if (!device_is_ready(irq1.port)) {
+		return false;
+	}
+	ret = gpio_pin_configure_dt(&irq1, GPIO_INPUT);
+	if (ret < 0) {
+		return false;
+	}
+
+    gpio_pin_set_dt(&cf1, 1);
+    gpio_pin_set_dt(&cf2, 1);
+    gpio_pin_set_dt(&cf3, 1);
+    gpio_pin_set_dt(&irq0, 1);
+    gpio_pin_set_dt(&irq1, 1);
+    
     return true;
 }
 
@@ -182,6 +149,70 @@ static bool PowerModeSet(ade9000_power_mode_t mode)
   
   return true;
 }
+static void StoreCoeffs(SEleFlashDataCal *fd)
+{
+  uint32_t default_coeff = 1;
+  if (fd != NULL) {
+    // TODO: Currently not supported
+    while(1);
+  }
+
+  ADE9000InterfaceRegWriteAndCheck(R_APHCAL0, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_BPHCAL0, default_coeff, 4);  
+  ADE9000InterfaceRegWriteAndCheck(R_CPHCAL0, default_coeff, 4);  
+    
+  default_coeff = 0;
+  ADE9000InterfaceRegWriteAndCheck(R_AIGAIN, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_AVGAIN, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_BIGAIN, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_BVGAIN, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_CIGAIN, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_CVGAIN, default_coeff, 4);
+  default_coeff = 0;
+  ADE9000InterfaceRegWriteAndCheck(R_AIRMSOS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_AVRMSOS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_BIRMSOS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_BVRMSOS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_CIRMSOS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_CVRMSOS, default_coeff, 4);
+  
+  default_coeff = 1;
+  ADE9000InterfaceRegWriteAndCheck(R_AWATTOS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_BWATTOS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_CWATTOS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_AVAROS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_BVAROS, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_CVAROS, default_coeff, 4);
+  
+  ADE9000InterfaceRegWriteAndCheck(R_APGAIN, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_BPGAIN, default_coeff, 4);
+  ADE9000InterfaceRegWriteAndCheck(R_CPGAIN, default_coeff, 4);
+}
+
+void EnergyAccConfigure(void)
+{
+    //aktywujemy i konfigurujemy akumulator energii
+    //reg.S_EP_CFG.RD_RST_EN = 1;
+    ade9000_reg32_t reg;
+    uint32_t no_load_thr = 2;
+    reg.v = no_load_thr * 64;
+    ADE9000InterfaceRegWrite(R_ACT_NL_LVL, reg.v, sizeof(reg.S_ACT_NL_LVL));
+    ADE9000InterfaceRegWrite(R_REACT_NL_LVL, reg.v, sizeof(reg.S_REACT_NL_LVL));                  
+    ADE9000InterfaceRegWrite(R_APP_NL_LVL, reg.v, sizeof(reg.S_APP_NL_LVL)); 
+
+    reg.v = 0;
+    reg.S_EP_CFG.EGY_PWR_EN = 1;//Set this bit to enable the energy and power accumulator
+    reg.S_EP_CFG.RD_RST_EN = 1;//Every read causes reset energy accumulator
+    ADE9000InterfaceRegWrite(R_EP_CFG, reg.v, sizeof(reg.S_EP_CFG));      
+    
+    reg.v = 8000;//Energy accumulation update time configuration.
+    ADE9000InterfaceRegWrite(R_EGY_TIME, reg.v, sizeof(reg.S_EGY_TIME));
+    
+    reg.v = 0;
+    reg.S_ACCMODE.WATTACC = 2;//Positive Accumuation Mode.
+    reg.S_ACCMODE.VARACC = 2;//Positive Accumuation Mode.
+    ADE9000InterfaceRegWrite(R_ACCMODE, reg.v, sizeof(reg.S_ACCMODE));
+}
 
 bool ADE9000Init(void)  
 {
@@ -191,7 +222,7 @@ bool ADE9000Init(void)
     if (!PowerModeSet(PM_Normal)) {
         return false;
     }
-    if (!SPIInit()) {
+    if (!ADE9000InterfaceInit()) {
         return false;
     }
     //TODO: Check those timings.
@@ -199,6 +230,9 @@ bool ADE9000Init(void)
     gpio_pin_set_dt(&reset, 0);
     //TODO: Check those timings.
     k_msleep(100);
+
+    StoreCoeffs(NULL);
+    EnergyAccConfigure();
     return true;
 }
 
@@ -217,11 +251,11 @@ void ADE9000MeasParamsSet(void)
     reg.S_PGA_GAIN.IC_GAIN = i_g;
     reg.S_PGA_GAIN.IN_GAIN = i_g;
 
-    RegWrite(R_PGA_GAIN ,reg.v,2);
+    ADE9000InterfaceRegWriteAndCheck(R_PGA_GAIN, reg.v, 2);
 
     reg.v = 0;
     reg.S_ACCMODE.SELFSREQ = 0;
-    RegWrite(R_ACCMODE, reg.v,2); 
+    ADE9000InterfaceRegWriteAndCheck(R_ACCMODE, reg.v,2); 
 }
 
 
@@ -230,31 +264,31 @@ bool ADE9000ConversionStart(void)
   ade9000_reg32_t reg, r_reg;
   //ADCData.MeasInProgress = 1; 
   reg.v = 0;
-  RegWrite(R_WFB_PG_IRQEN, 0x8080, 2);
+  CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_WFB_PG_IRQEN, 0x8080, 2));
   //konfiguracja przebiegow:
-  RegWrite(R_WFB_CFG, reg.v,sizeof(reg.S_WFB_CFG));
+  CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_WFB_CFG, reg.v,sizeof(reg.S_WFB_CFG)));
   reg.S_WFB_CFG.WF_MODE = 3;
   reg.S_WFB_CFG.WF_CAP_SEL = 1;
   reg.S_WFB_CFG.WF_CAP_EN = 1;
   reg.S_WFB_CFG.WF_SRC = 3;  
-  RegWrite(R_WFB_CFG, reg.v,sizeof(reg.S_WFB_CFG));  
-  RegRead(R_WFB_CFG, &r_reg.v,sizeof(r_reg.S_WFB_CFG));  
+  CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_WFB_CFG, reg.v, sizeof(reg.S_WFB_CFG)));  
+  ADE9000InterfaceRegRead(R_WFB_CFG, &r_reg.v,sizeof(r_reg.S_WFB_CFG));  
   if (r_reg.v != reg.v) return false;
 
-  RegRead(R_CONFIG1, &reg.v,sizeof(reg.S_CONFIG1));  
+  ADE9000InterfaceRegRead(R_CONFIG1, &reg.v, sizeof(reg.S_CONFIG1));  
   reg.S_CONFIG1.BURST_EN = 1;
   reg.S_CONFIG1.CF4_CFG = 0x2;
-  RegWrite(R_CONFIG1, reg.v, sizeof(reg.S_CONFIG1));
+  CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_CONFIG1, reg.v, sizeof(reg.S_CONFIG1)));
   
   reg.v = 0;
   reg.S_EVENT_MASK.DREADY = 1;
-  RegWrite(R_EVENT_MASK, reg.v, sizeof(reg.S_EVENT_MASK));
+  CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_EVENT_MASK, reg.v, sizeof(reg.S_EVENT_MASK)));
   
-  RegRead(R_RUN, &reg.v,sizeof(reg.S_RUN));  
+  ADE9000InterfaceRegRead(R_RUN, &reg.v, sizeof(reg.S_RUN));  
 
   if (!reg.S_RUN.Start) {
     reg.S_RUN.Start = 1;
-    RegWrite(R_RUN,reg.v,sizeof(reg.S_RUN));
+    CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_RUN,reg.v, sizeof(reg.S_RUN)));
   }
 
   return true;
@@ -264,6 +298,6 @@ bool ADE9000ConversionStart(void)
 
 void ADE9000StreamRead(void)
 {
-    RegRead(R_AV_PCF_1 , m_rx_buffer, 28);
+    //ADE9000InterfaceRegRead(R_AV_PCF_1 , (uint8_t*)m_rx_buffer, 28);
     k_sleep(K_SECONDS(1));
 }
