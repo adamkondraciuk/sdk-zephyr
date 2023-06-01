@@ -16,9 +16,19 @@
 #include "ade9000.h"
 #include "ade9000Estimates.h"
 #include "pcal6408apwj.h"
+#include "ade9000Interface.h"
+//TODO: temporary
+#include "sram.h"
 
-// TODO: 
+// TODO:
 #define NB_OF_ESIMATES_TO_GET 16
+
+#define ERROR_REPORT(str)   \
+	printk(str);            \
+	while(1) {              \
+		k_sleep(K_FOREVER); \
+	}
+
 
 LOG_MODULE_REGISTER(logging_blog, LOG_LEVEL_DBG);
 
@@ -31,35 +41,32 @@ static adc_t ADE9000 = ADC_INITIALIZE_STRUCT(
 
 void main(void)
 {
-	if (!device_is_ready(led.port)) {
-		return;
-	}
-	int ret = gpio_pin_configure_dt(&led, GPIO_OUTPUT_ACTIVE);
-	if (ret < 0) {
-		return;
-	}
-	gpio_pin_toggle_dt(&led);
 
 	// TODO: error handling
 	init_leds();
 	(void)test_leds();
-    
+
+    if (!SRAMInit()) {
+		ERROR_REPORT("Error while initializing SRAM\n");
+	}
+
+	SRAMReset();
+	k_sleep(K_MSEC(100));
+	if (!SRAMTest()) {
+		ERROR_REPORT("Error while testing SRAM\n");
+	}
+
 	if (!ADE9000.initialize(NULL)) {
-		printk("Error while initializing ADE9000\n");
-		// TODO: Error handling
-		while(1);
+		ERROR_REPORT("Error while initializing ADE9000\n");
 	}
 	(void)ADE9000.configure(NULL);
 	if (!ADE9000.start(NULL))
 	{
-		printk("ADE9000MeasParamsSet() Error\n");
-		// TODO: Error handling
-		while(1);
+		ERROR_REPORT("ADE9000MeasParamsSet() Error\n");
 	}
 
 	while (1) {
 		k_sleep(K_SECONDS(1));
-		gpio_pin_toggle_dt(&led);
 		#ifdef HAS_BUILDIN_PWN_DIDOES
 		pwm_set_pulse_dt(&red_pwm_led, 20000000);
 		#endif

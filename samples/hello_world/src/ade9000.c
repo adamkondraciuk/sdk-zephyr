@@ -11,13 +11,10 @@
 #include "ade9000_registers.h"
 #include "ade9000Estimates.h"
 
-#define ADE9000_PM0_NODE   DT_ALIAS(ade9000pm0)
+//#define ADE9000_PM0_NODE   DT_ALIAS(ade9000pm0)
 #define ADE9000_PM1_NODE   DT_ALIAS(ade9000pm1)
 #define ADE9000_RESET_NODE DT_ALIAS(ade9000reset)
 #define ADE9000_DRDY_NODE  DT_ALIAS(ade9000drdy)
-#define ADE9000_CF1_NODE  DT_ALIAS(ade9000cf1)
-#define ADE9000_CF2_NODE  DT_ALIAS(ade9000cf2)
-#define ADE9000_CF3_NODE  DT_ALIAS(ade9000cf3)
 #define ADE9000_IRQ0_NODE  DT_ALIAS(ade9000irq0)
 #define ADE9000_IRQ1_NODE  DT_ALIAS(ade9000irq1)
 
@@ -25,13 +22,10 @@
 #define CHECK_RESULT_BOOL(expression) \
         if (!expression) return false;
 
-static const struct gpio_dt_spec pm0   = GPIO_DT_SPEC_GET(ADE9000_PM0_NODE, gpios);
+//static const struct gpio_dt_spec pm0   = GPIO_DT_SPEC_GET(ADE9000_PM0_NODE, gpios);
 static const struct gpio_dt_spec pm1   = GPIO_DT_SPEC_GET(ADE9000_PM1_NODE, gpios);
 static const struct gpio_dt_spec reset = GPIO_DT_SPEC_GET(ADE9000_RESET_NODE, gpios);
 static const struct gpio_dt_spec drdy  = GPIO_DT_SPEC_GET(ADE9000_DRDY_NODE, gpios);
-static const struct gpio_dt_spec cf1   = GPIO_DT_SPEC_GET(ADE9000_CF1_NODE, gpios);
-static const struct gpio_dt_spec cf2   = GPIO_DT_SPEC_GET(ADE9000_CF2_NODE, gpios);
-static const struct gpio_dt_spec cf3   = GPIO_DT_SPEC_GET(ADE9000_CF3_NODE, gpios);
 static const struct gpio_dt_spec irq0  = GPIO_DT_SPEC_GET(ADE9000_IRQ0_NODE, gpios);
 static const struct gpio_dt_spec irq1  = GPIO_DT_SPEC_GET(ADE9000_IRQ1_NODE, gpios);
 
@@ -62,13 +56,13 @@ static bool GPIOConfig(void)
     //TODO: Check those timings.
     k_msleep(100);
 
-    if (!device_is_ready(pm0.port)) {
+  /*if (!device_is_ready(pm0.port)) {
 		return false;
 	}
 	ret = gpio_pin_configure_dt(&pm0, GPIO_OUTPUT_ACTIVE);
 	if (ret < 0) {
 		return false;
-	}
+	}*/
 
     if (!device_is_ready(pm1.port)) {
 		return false;
@@ -82,30 +76,6 @@ static bool GPIOConfig(void)
 		return false;
 	}
 	ret = gpio_pin_configure_dt(&drdy, GPIO_INPUT);
-	if (ret < 0) {
-		return false;
-	}
-
-    if (!device_is_ready(cf1.port)) {
-		return false;
-	}
-	ret = gpio_pin_configure_dt(&cf1, GPIO_INPUT);
-	if (ret < 0) {
-		return false;
-	}
-
-    if (!device_is_ready(cf2.port)) {
-		return false;
-	}
-	ret = gpio_pin_configure_dt(&cf2, GPIO_INPUT);
-	if (ret < 0) {
-		return false;
-	}
-
-    if (!device_is_ready(cf3.port)) {
-		return false;
-	}
-	ret = gpio_pin_configure_dt(&cf3, GPIO_INPUT);
 	if (ret < 0) {
 		return false;
 	}
@@ -126,9 +96,6 @@ static bool GPIOConfig(void)
 		return false;
 	}
 
-    gpio_pin_set_dt(&cf1, 1);
-    gpio_pin_set_dt(&cf2, 1);
-    gpio_pin_set_dt(&cf3, 1);
     gpio_pin_set_dt(&irq0, 1);
     gpio_pin_set_dt(&irq1, 1);
     
@@ -139,7 +106,7 @@ static bool PowerModeSet(ade9000_power_mode_t mode)
 {
     switch(mode) {
         case PM_Normal:
-            gpio_pin_set_dt(&pm0, 0);
+            //gpio_pin_set_dt(&pm0, 0);
             gpio_pin_set_dt(&pm1, 0);
             break;
         default:

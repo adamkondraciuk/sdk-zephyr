@@ -98,7 +98,7 @@ int test_leds(void)
 	transfer_data.secondary_length = 0;
 	transfer_data.p_secondary_buf = NULL;	
 
-	k_sleep(K_SECONDS(1));
+	k_msleep(100);
 	nrfx_twi_xfer(&m_twi , &transfer_data , 0);
 	// printk("transmit code %d \n" , err_code_twi_innit);
 	data_return[0] = 0;
