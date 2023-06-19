@@ -7,11 +7,11 @@
 
 #include <stdbool.h>
 
-bool ADE9000Init(void);
+bool ADE9000Init(void * params);
 
-void ADE9000MeasParamsSet(void);
+bool ADE9000MeasParamsSet(void * params);
 
-bool ADE9000ConversionStart(void);
+bool ADE9000ConversionStart(void * params);
 
 void ADE9000StreamRead(void);
 

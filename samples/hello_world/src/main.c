@@ -11,6 +11,7 @@
 #include <zephyr/logging/log.h>
 #include <zephyr/devicetree.h>
 
+#include "adc.h"
 #include "build_in_leds.h"
 #include "ade9000.h"
 #include "ade9000Estimates.h"
@@ -20,6 +21,11 @@
 #define NB_OF_ESIMATES_TO_GET 16
 
 LOG_MODULE_REGISTER(logging_blog, LOG_LEVEL_DBG);
+
+static adc_t ADE9000 = ADC_INITIALIZE_STRUCT(
+							ADE9000Init,
+							ADE9000MeasParamsSet,
+							ADE9000ConversionStart);
 
 void main(void)
 {
@@ -36,13 +42,13 @@ void main(void)
 	init_leds();
 	(void)test_leds();
     
-	if (!ADE9000Init()) {
+	if (!ADE9000.initialize(NULL)) {
 		printk("Error while initializing ADE9000\n");
 		// TODO: Error handling
 		while(1);
 	}
-	ADE9000MeasParamsSet();
-	if (!ADE9000ConversionStart())
+	(void)ADE9000.configure(NULL);
+	if (!ADE9000.start(NULL))
 	{
 		printk("ADE9000MeasParamsSet() Error\n");
 		// TODO: Error handling

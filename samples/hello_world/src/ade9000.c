@@ -214,8 +214,9 @@ void EnergyAccConfigure(void)
     ADE9000InterfaceRegWrite(R_ACCMODE, reg.v, sizeof(reg.S_ACCMODE));
 }
 
-bool ADE9000Init(void)  
+bool ADE9000Init(void * params)  
 {
+    (void)params;
     if (!GPIOConfig()) {
         return false;
     }
@@ -236,8 +237,9 @@ bool ADE9000Init(void)
     return true;
 }
 
-void ADE9000MeasParamsSet(void)
+bool ADE9000MeasParamsSet(void * params)
 {
+    (void)params;
     uint8_t i_gain = 1;
     uint8_t v_gain = 1;
     uint16_t u_g = v_gain - 1, i_g = i_gain - 1;
@@ -255,7 +257,8 @@ void ADE9000MeasParamsSet(void)
 
     reg.v = 0;
     reg.S_ACCMODE.SELFSREQ = 0;
-    ADE9000InterfaceRegWriteAndCheck(R_ACCMODE, reg.v,2); 
+    ADE9000InterfaceRegWriteAndCheck(R_ACCMODE, reg.v,2);
+    return true;
 }
 
 
