@@ -25,7 +25,9 @@ LOG_MODULE_REGISTER(logging_blog, LOG_LEVEL_DBG);
 static adc_t ADE9000 = ADC_INITIALIZE_STRUCT(
 							ADE9000Init,
 							ADE9000MeasParamsSet,
-							ADE9000ConversionStart);
+							ADE9000ConversionStart,
+							NULL,
+							ADE9000EstimatesEstimate1sRead);
 
 void main(void)
 {

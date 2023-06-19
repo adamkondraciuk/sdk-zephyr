@@ -262,8 +262,9 @@ bool ADE9000MeasParamsSet(void * params)
 }
 
 
-bool ADE9000ConversionStart(void)
+bool ADE9000ConversionStart(void * params)
 {
+  (void)params;
   ade9000_reg32_t reg, r_reg;
   //ADCData.MeasInProgress = 1; 
   reg.v = 0;
