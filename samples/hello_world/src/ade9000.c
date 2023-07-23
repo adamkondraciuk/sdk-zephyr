@@ -34,7 +34,7 @@ typedef enum {
     PM_Normal  = 1,
     PM_Low     = 2,
     PM_Sleep   = 3
-} ade9000_power_mode_t; 
+} ade9000_power_mode_t;
 
 #define TEST_REG 0x4FE
 #define EXPECTED_TEST_RESULT 0x00FE
@@ -98,7 +98,7 @@ static bool GPIOConfig(void)
 
     gpio_pin_set_dt(&irq0, 1);
     gpio_pin_set_dt(&irq1, 1);
-    
+
     return true;
 }
 
@@ -113,47 +113,56 @@ static bool PowerModeSet(ade9000_power_mode_t mode)
             // Other modes not supported at the moment.
             return false;
   }
-  
+
   return true;
 }
 static void StoreCoeffs(SEleFlashDataCal *fd)
 {
-  uint32_t default_coeff = 1;
-  if (fd != NULL) {
-    // TODO: Currently not supported
-    while(1);
-  }
+	int32_t default_coeff = 0;
+	if (fd != NULL) {
+	// TODO: Currently not supported
+	while(1);
+	}
+	//default_coeff = 14528733;
+	default_coeff = -330;
+	ADE9000InterfaceRegWriteAndCheck(R_APHCAL0, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BPHCAL0, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CPHCAL0, default_coeff, 4);
 
-  ADE9000InterfaceRegWriteAndCheck(R_APHCAL0, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_BPHCAL0, default_coeff, 4);  
-  ADE9000InterfaceRegWriteAndCheck(R_CPHCAL0, default_coeff, 4);  
-    
-  default_coeff = 0;
-  ADE9000InterfaceRegWriteAndCheck(R_AIGAIN, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_AVGAIN, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_BIGAIN, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_BVGAIN, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_CIGAIN, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_CVGAIN, default_coeff, 4);
-  default_coeff = 0;
-  ADE9000InterfaceRegWriteAndCheck(R_AIRMSOS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_AVRMSOS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_BIRMSOS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_BVRMSOS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_CIRMSOS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_CVRMSOS, default_coeff, 4);
-  
-  default_coeff = 1;
-  ADE9000InterfaceRegWriteAndCheck(R_AWATTOS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_BWATTOS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_CWATTOS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_AVAROS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_BVAROS, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_CVAROS, default_coeff, 4);
-  
-  ADE9000InterfaceRegWriteAndCheck(R_APGAIN, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_BPGAIN, default_coeff, 4);
-  ADE9000InterfaceRegWriteAndCheck(R_CPGAIN, default_coeff, 4);
+	default_coeff = -130301663;
+	ADE9000InterfaceRegWriteAndCheck(R_AIGAIN, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BIGAIN, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CIGAIN, default_coeff, 4);
+
+	default_coeff = -132382530;
+	ADE9000InterfaceRegWriteAndCheck(R_AVGAIN, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BVGAIN, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CVGAIN, default_coeff, 4);
+
+	default_coeff = 1;
+	ADE9000InterfaceRegWriteAndCheck(R_AIRMSOS, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BIRMSOS, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CIRMSOS, default_coeff, 4);
+
+	default_coeff = 0;
+	ADE9000InterfaceRegWriteAndCheck(R_AVRMSOS, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BVRMSOS, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CVRMSOS, default_coeff, 4);
+
+	default_coeff = 0;
+	ADE9000InterfaceRegWriteAndCheck(R_AWATTOS, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BWATTOS, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CWATTOS, default_coeff, 4);
+
+	default_coeff = 0;
+	ADE9000InterfaceRegWriteAndCheck(R_AVAROS, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BVAROS, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CVAROS, default_coeff, 4);
+
+	default_coeff = 40116187;
+	ADE9000InterfaceRegWriteAndCheck(R_APGAIN, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BPGAIN, default_coeff, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CPGAIN, default_coeff, 4);
 }
 
 void EnergyAccConfigure(void)
@@ -164,44 +173,42 @@ void EnergyAccConfigure(void)
     uint32_t no_load_thr = 2;
     reg.v = no_load_thr * 64;
     ADE9000InterfaceRegWrite(R_ACT_NL_LVL, reg.v, sizeof(reg.S_ACT_NL_LVL));
-    ADE9000InterfaceRegWrite(R_REACT_NL_LVL, reg.v, sizeof(reg.S_REACT_NL_LVL));                  
-    ADE9000InterfaceRegWrite(R_APP_NL_LVL, reg.v, sizeof(reg.S_APP_NL_LVL)); 
+    ADE9000InterfaceRegWrite(R_REACT_NL_LVL, reg.v, sizeof(reg.S_REACT_NL_LVL));
+    ADE9000InterfaceRegWrite(R_APP_NL_LVL, reg.v, sizeof(reg.S_APP_NL_LVL));
 
     reg.v = 0;
     reg.S_EP_CFG.EGY_PWR_EN = 1;//Set this bit to enable the energy and power accumulator
     reg.S_EP_CFG.RD_RST_EN = 1;//Every read causes reset energy accumulator
-    ADE9000InterfaceRegWrite(R_EP_CFG, reg.v, sizeof(reg.S_EP_CFG));      
-    
+    ADE9000InterfaceRegWrite(R_EP_CFG, reg.v, sizeof(reg.S_EP_CFG));
+
     reg.v = 8000;//Energy accumulation update time configuration.
     ADE9000InterfaceRegWrite(R_EGY_TIME, reg.v, sizeof(reg.S_EGY_TIME));
-    
+
     reg.v = 0;
     reg.S_ACCMODE.WATTACC = 2;//Positive Accumuation Mode.
     reg.S_ACCMODE.VARACC = 2;//Positive Accumuation Mode.
     ADE9000InterfaceRegWrite(R_ACCMODE, reg.v, sizeof(reg.S_ACCMODE));
 }
 
-bool ADE9000Init(void * params)  
+bool ADE9000Init(void * params)
 {
-    (void)params;
-    if (!GPIOConfig()) {
-        return false;
-    }
-    if (!PowerModeSet(PM_Normal)) {
-        return false;
-    }
-    if (!ADE9000InterfaceInit()) {
-        return false;
-    }
-    //TODO: Check those timings.
-    k_msleep(10);
-    gpio_pin_set_dt(&reset, 0);
-    //TODO: Check those timings.
-    k_msleep(100);
+	(void)params;
+	if (!GPIOConfig()) {
+	return false;
+	}
+	if (!PowerModeSet(PM_Normal)) {
+	return false;
+	}
+	if (!ADE9000InterfaceInit()) {
+	return false;
+	}
+	//TODO: Check those timings.
+	k_msleep(10);
+	gpio_pin_set_dt(&reset, 0);
+	//TODO: Check those timings.
+	k_msleep(100);
 
-    StoreCoeffs(NULL);
-    EnergyAccConfigure();
-    return true;
+	return true;
 }
 
 bool ADE9000MeasParamsSet(void * params)
@@ -211,6 +218,7 @@ bool ADE9000MeasParamsSet(void * params)
     uint8_t v_gain = 1;
     uint16_t u_g = v_gain - 1, i_g = i_gain - 1;
     ade9000_reg32_t reg;
+
     reg.v = 0;
     reg.S_PGA_GAIN.VA_GAIN = u_g;
     reg.S_PGA_GAIN.VB_GAIN = u_g;
@@ -220,11 +228,20 @@ bool ADE9000MeasParamsSet(void * params)
     reg.S_PGA_GAIN.IC_GAIN = i_g;
     reg.S_PGA_GAIN.IN_GAIN = i_g;
 
+
+    StoreCoeffs(NULL);
+    EnergyAccConfigure();
     ADE9000InterfaceRegWriteAndCheck(R_PGA_GAIN, reg.v, 2);
 
     reg.v = 0;
-    reg.S_ACCMODE.SELFSREQ = 0;
+    reg.S_ACCMODE.SELFSREQ = 1;
     ADE9000InterfaceRegWriteAndCheck(R_ACCMODE, reg.v,2);
+
+    ADE9000InterfaceRegWriteAndCheck(R_DICOEFF, 0xFFFFE000, 4);
+    ADE9000InterfaceRegRead(R_CONFIG0, &reg.v, sizeof(reg.S_CONFIG0));
+    reg.S_CONFIG0.INTEN = 1;
+    CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_CONFIG0, reg.v, sizeof(reg.S_CONFIG0)));
+
     return true;
 }
 
@@ -233,7 +250,7 @@ bool ADE9000ConversionStart(void * params)
 {
   (void)params;
   ade9000_reg32_t reg, r_reg;
-  //ADCData.MeasInProgress = 1; 
+  //ADCData.MeasInProgress = 1;
   reg.v = 0;
   CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_WFB_PG_IRQEN, 0x8080, 2));
   //konfiguracja przebiegow:
@@ -241,21 +258,21 @@ bool ADE9000ConversionStart(void * params)
   reg.S_WFB_CFG.WF_MODE = 3;
   reg.S_WFB_CFG.WF_CAP_SEL = 1;
   reg.S_WFB_CFG.WF_CAP_EN = 1;
-  reg.S_WFB_CFG.WF_SRC = 3;  
-  CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_WFB_CFG, reg.v, sizeof(reg.S_WFB_CFG)));  
-  ADE9000InterfaceRegRead(R_WFB_CFG, &r_reg.v,sizeof(r_reg.S_WFB_CFG));  
+  reg.S_WFB_CFG.WF_SRC = 3;
+  CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_WFB_CFG, reg.v, sizeof(reg.S_WFB_CFG)));
+  ADE9000InterfaceRegRead(R_WFB_CFG, &r_reg.v,sizeof(r_reg.S_WFB_CFG));
   if (r_reg.v != reg.v) return false;
 
-  ADE9000InterfaceRegRead(R_CONFIG1, &reg.v, sizeof(reg.S_CONFIG1));  
+  ADE9000InterfaceRegRead(R_CONFIG1, &reg.v, sizeof(reg.S_CONFIG1));
   reg.S_CONFIG1.BURST_EN = 1;
   reg.S_CONFIG1.CF4_CFG = 0x2;
   CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_CONFIG1, reg.v, sizeof(reg.S_CONFIG1)));
-  
+
   reg.v = 0;
   reg.S_EVENT_MASK.DREADY = 1;
   CHECK_RESULT_BOOL(ADE9000InterfaceRegWriteAndCheck(R_EVENT_MASK, reg.v, sizeof(reg.S_EVENT_MASK)));
-  
-  ADE9000InterfaceRegRead(R_RUN, &reg.v, sizeof(reg.S_RUN));  
+
+  ADE9000InterfaceRegRead(R_RUN, &reg.v, sizeof(reg.S_RUN));
 
   if (!reg.S_RUN.Start) {
     reg.S_RUN.Start = 1;
@@ -264,8 +281,6 @@ bool ADE9000ConversionStart(void * params)
 
   return true;
 }
-
-
 
 void ADE9000StreamRead(void)
 {

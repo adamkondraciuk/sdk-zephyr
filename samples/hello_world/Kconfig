@@ -1,0 +1,21 @@
+# Copyright (c) 2023 ELMODIS Ltd.
+
+mainmenu "Elmodis EnergyTag demo"
+
+config ADC_MAX_NUMBER_OF_CHANNELS
+	int "Maximum nubmer of ADC channels"
+	range 0 255
+	help
+	  CONFIG_ADC_MAX_NUMBER_OF_CHANNELS must be defined in your prj.conf file
+
+config ADC_CHANNEL_NAMES_USE
+	bool "Use channel names assignment"
+	default n
+	help
+	  Enables channel names feature for ADC stucture
+
+config ESTIMATES_QUEUE_SIZE
+	int "Size of estimates queue"
+	default 1
+
+source "Kconfig.zephyr"
