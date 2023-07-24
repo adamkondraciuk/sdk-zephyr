@@ -13,4 +13,6 @@ target_sources(app PRIVATE
     src/pcal6408apwj.c
     src/SRAMInterface.c
     src/sram.c
+    src/ble_gatt_service.c
+    src/bas_gatt.c
 )
