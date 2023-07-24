@@ -43,10 +43,6 @@
 			gpios = <&gpio0 12 GPIO_ACTIVE_LOW>;
 			label = "Blue LED 1";
 		};
-		ade9000pm0: ade9000_pm0 {
-			gpios = <&gpio0 29 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
-			label = "ADE9000 PM0 pin";
-		};
 		ade9000pm1: ade9000_pm1 {
 			gpios = <&gpio0 2 (GPIO_PULL_DOWN | GPIO_ACTIVE_HIGH)>;
 			label = "ADE9000 PM1 pin";
@@ -58,18 +54,6 @@
 		ade9000drdy: ade9000_drdy {
 			gpios = <&gpio0 20 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
 			label = "ADE9000 DRDY pin";
-		};
-		ade9000cf1: ade9000_cf1 {
-			gpios = <&gpio0 13 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
-			label = "ADE9000 CF1 pin";
-		};
-		ade9000cf2: ade9000_cf2 {
-			gpios = <&gpio0 15 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
-			label = "ADE9000 CF2 pin";
-		};
-		ade9000cf3: ade9000_cf3 {
-			gpios = <&gpio0 17 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
-			label = "ADE9000 CF3 pin";
 		};
 		ade9000irq1: ade9000_irq1 {
 			gpios = <&gpio0 9 (GPIO_PULL_UP | GPIO_ACTIVE_HIGH)>;
@@ -122,13 +106,9 @@
 		mcuboot-button0 = &button0;
 		mcuboot-led0 = &led0_green;
 		watchdog0 = &wdt0;
-		ade9000pm0 = &ade9000pm0;
 		ade9000pm1 = &ade9000pm1;
 		ade9000reset = &ade9000reset;
 		ade9000drdy = &ade9000drdy;
-		ade9000cf1 = &ade9000cf1;
-		ade9000cf2 = &ade9000cf2;
-		ade9000cf3 = &ade9000cf3;
 		ade9000irq0 = &ade9000irq0;
 		ade9000irq1 = &ade9000irq1;
 	};
@@ -187,12 +167,11 @@
  * By default, not adding all available SPI instances (spi2, spi3) due to
  * limited GPIOs available on dongle board.
  */
-&spi0 {
-	compatible = "nordic,nrf-spi";
-	/* Cannot be used together with i2c0. */
-	/* status = "okay"; */
-	pinctrl-0 = <&spi0_default>;
-	pinctrl-1 = <&spi0_sleep>;
+&spi2 {
+	compatible = "nordic,nrf-spim";
+	status = "okay";
+	pinctrl-0 = <&spi2_default>;
+	pinctrl-1 = <&spi2_sleep>;
 	pinctrl-names = "default", "sleep";
 };
 
