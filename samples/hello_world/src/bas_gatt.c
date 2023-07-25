@@ -42,8 +42,8 @@ void ble_buffer_copy_estimates(uint32_t var1, uint32_t var2, uint32_t var3, uint
 
 void ble_buffer_copy_from_uint8_buffer(uint8_t* src_buffer, size_t src_length) {
     // Copy data from the uint8_t buffer into the ble_gatt_buffer
-	size_t copy_length = (src_length < sizeof(ble_gatt_buffer)) ? src_length : sizeof(ble_gatt_buffer);
-    memcpy(ble_gatt_buffer, src_buffer, copy_length);
+	//size_t copy_length = (src_length < sizeof(ble_gatt_buffer)) ? src_length : sizeof(ble_gatt_buffer);
+    memcpy(ble_gatt_buffer, src_buffer, src_length);
 }
 
 
@@ -98,11 +98,11 @@ int bt_set_new_frame(){
 	return rc == -ENOTCONN ? 0 : rc;
 }
 
-int bt_set_estimates(uint8_t data[])
+int bt_set_estimates(uint8_t data[] ,  size_t num_of_bytes)
 {
 	int rc;
 
-	rc = bt_gatt_notify(NULL, &bas.attrs[1], data, 20);
+	rc = bt_gatt_notify(NULL, &bas.attrs[1], data, num_of_bytes);
 
 	return rc == -ENOTCONN ? 0 : rc;
 }

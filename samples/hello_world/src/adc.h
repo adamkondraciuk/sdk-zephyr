@@ -2,12 +2,12 @@
 #define ADC_H
 
 typedef struct {
-    bool (* initialize)(void *);
-    bool (* configure)(void *);
-    bool (* start) (void *);
-    bool (* stop) (void *);
-    bool (* channel_read) (uint8_t chan, void *);
-    bool (* all_channels_read) (void *);
+    bool (*initialize)(void *);
+    bool (*configure)(void *);
+    bool (*start) (void *);
+    bool (*stop) (void *);
+    bool (*channel_read) (uint8_t chan, void *);
+    bool (*all_channels_read) (void *);
 #if IS_ENABLED(CONFIG_ADC_CHANNEL_NAMES_USE)
     const char *channel_name[CONFIG_ADC_MAX_NUMBER_OF_CHANNELS];
 #endif

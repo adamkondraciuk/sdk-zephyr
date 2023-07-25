@@ -107,15 +107,15 @@ void estimates_meas(void)
 	(void)test_leds();
 
 
-    if (!SRAMInit()) {
-		ERROR_REPORT("Error while initializing SRAM\n");
-	}
+    // if (!SRAMInit()) {
+	// 	ERROR_REPORT("Error while initializing SRAM\n");
+	// }
 
-	SRAMReset();
-	k_sleep(K_MSEC(100));
-	if (!SRAMTest()) {
-		ERROR_REPORT("Error while testing SRAM\n");
-	}
+	// SRAMReset();
+	// k_sleep(K_MSEC(100));
+	// if (!SRAMTest()) {
+	// 	ERROR_REPORT("Error while testing SRAM\n");
+	// }
 
 	if (!ADE9000.initialize(NULL)) {
 		ERROR_REPORT("Error while initializing ADE9000\n");
@@ -172,11 +172,12 @@ static bool my_bt_send_function(void * data, size_t num_of_bytes)
 
 void bluetooth_comm(void)
 {
-	if(bt_innit()){
-		printk("Bluetooth initialized\n");
-	} else {
-		ERROR_REPORT("Bluetooth initialization failed\n");
-	}
+	bt_innit();
+	// if(!bt_innit()){
+	// 	printk("Bluetooth initialized\n");
+	// } else {
+	// 	ERROR_REPORT("Bluetooth  failed\n");
+	// }
 	//TODO to be removed when bt transfer is added
 	const uint32_t max_bt_delay_ms = 100;
 	uint32_t transfer_delay_sim;

@@ -78,11 +78,11 @@ void estimates_notify(uint8_t* estimate_buff , size_t num_of_bytes)
 	while(true){
 		if(i+16 > num_of_bytes){
 			ble_buffer_copy_from_uint8_buffer(estimate_buff + i, num_of_bytes-i);
-			bt_set_estimates(ble_buffer);
+			bt_set_estimates(ble_buffer , num_of_bytes-i);
 			break;
 		}
 		ble_buffer_copy_from_uint8_buffer(estimate_buff + i, 16);
-		bt_set_estimates(ble_buffer);
+		bt_set_estimates(ble_buffer , 16);
 		i=i+16;
 	}
 	
@@ -107,13 +107,13 @@ int bt_innit(void){
 	err = bt_enable(NULL);
 	if (err) {
 		printk("Bluetooth init failed (err %d)\n", err);
-		return 1;
+		return 0;
 	}
 
 	bt_ready();
 
 	bt_conn_auth_cb_register(&auth_cb_display);
-	return 0;
+	return 1;
 }
 
 //TODO to be removed 
