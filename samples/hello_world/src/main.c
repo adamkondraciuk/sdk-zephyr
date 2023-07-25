@@ -20,8 +20,6 @@
 #include "ade9000Estimates.h"
 #include "pcal6408apwj.h"
 #include "ade9000Interface.h"
-//TODO: temporary
-#include "sram.h"
 
 //BLE
 #include "ble_gatt_service.h"
@@ -30,7 +28,6 @@
 #define STACKSIZE 1024
 #define MEAS_PRIORITY 0
 #define BLUETOOTH_PRIORITY 1
-
 
 typedef struct {
 	uint32_t counter;
@@ -105,17 +102,6 @@ void estimates_meas(void)
 	// TODO: error handling
 	init_leds();
 	(void)test_leds();
-
-
-    // if (!SRAMInit()) {
-	// 	ERROR_REPORT("Error while initializing SRAM\n");
-	// }
-
-	// SRAMReset();
-	// k_sleep(K_MSEC(100));
-	// if (!SRAMTest()) {
-	// 	ERROR_REPORT("Error while testing SRAM\n");
-	// }
 
 	if (!ADE9000.initialize(NULL)) {
 		ERROR_REPORT("Error while initializing ADE9000\n");
