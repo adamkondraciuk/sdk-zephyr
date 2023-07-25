@@ -3,6 +3,7 @@
  */
 
 #include <zephyr/kernel.h>
+#include <math.h>
 
 #include "ade9000Estimates.h"
 #include "ade9000_registers.h"
@@ -22,12 +23,12 @@ typedef struct estimates_seq_t{
 } estimates_seq_t;
 
 static const estimates_seq_t EstimatesReadSequenceTable[] = {
-    {R_AIRMS, offsetof(ade_est_data_t, IAW), 4 },
-    {R_AVRMS, offsetof(ade_est_data_t, VAW), 4 },
-    {R_BIRMS, offsetof(ade_est_data_t, IBW), 4 },
-    {R_BVRMS, offsetof(ade_est_data_t, VBW), 4 },
-    {R_CIRMS, offsetof(ade_est_data_t, ICW), 4 },
-    {R_CVRMS, offsetof(ade_est_data_t, VCW), 4 },
+    {R_AIRMS, offsetof(ade_est_data_t, IA), 4 },
+    {R_AVRMS, offsetof(ade_est_data_t, VA), 4 },
+    {R_BIRMS, offsetof(ade_est_data_t, IB), 4 },
+    {R_BVRMS, offsetof(ade_est_data_t, VB), 4 },
+    {R_CIRMS, offsetof(ade_est_data_t, IC), 4 },
+    {R_CVRMS, offsetof(ade_est_data_t, VC), 4 },
 
     {R_AWATT, offsetof(ade_est_data_t, AWATT), 4 },
     {R_BWATT, offsetof(ade_est_data_t, BWATT), 4 },
@@ -54,6 +55,42 @@ static const estimates_seq_t EstimatesReadSequenceTable[] = {
     {R_ANGL_VC_IC, offsetof(ade_est_data_t, Angle2), 2 },
 };
 
+static void AdditionalEstimatesCalculate(ade_est_data_t * estimates)
+{
+	static int32_t ea_last[3];
+	static int32_t er_last[3];
+
+	// TODO - remove as it is for 50Hz system only.
+	estimates->Angle0 = (int32_t)(0.017578125 * (double)estimates->Angle0);
+	estimates->Angle1 = (int32_t)(0.017578125 * (double)estimates->Angle1);
+	estimates->Angle2 = (int32_t)(0.017578125 * (double)estimates->Angle2);
+
+	estimates->Imean = (estimates->IA + estimates->IB + estimates->IC) / 3;
+	estimates->Umean = (estimates->VA + estimates->VB + estimates->VC) / 3;
+
+	ea_last[0] += estimates->AWATTHR;
+	ea_last[1] += estimates->BWATTHR;
+	ea_last[2] += estimates->CWATTHR;
+	estimates->AWATTHR = ea_last[0];
+	estimates->BWATTHR = ea_last[1];
+	estimates->CWATTHR = ea_last[2];
+
+	er_last[0] += estimates->AVARHR;
+	er_last[1] += estimates->BVARHR;
+	er_last[2] += estimates->CVARHR;
+	estimates->AVARHR = er_last[0];
+	estimates->BVARHR = er_last[1];
+	estimates->CVARHR = er_last[2];
+
+	estimates->P = estimates->AWATT + estimates->BWATT + estimates->CWATT;
+	estimates->Q = estimates->AVAR + estimates->BVAR + estimates->CVAR;
+	estimates->S = estimates->AVA + estimates->BVA + estimates->CVA;
+
+	estimates->VAB = (int32_t)((estimates->VA + estimates->VB) / (2 * sqrt(3)));
+	estimates->VBC = (int32_t)((estimates->VB + estimates->VC) / (2 * sqrt(3)));
+	estimates->VCA = (int32_t)((estimates->VC + estimates->VA) / (2 * sqrt(3)));
+}
+
 bool ADE9000EstimatesAllEstimates1sRead(void *p_est)
 {
 	//__ASSERT(p_est);
@@ -69,6 +106,7 @@ bool ADE9000EstimatesAllEstimates1sRead(void *p_est)
 			k_usleep(10);
 		}
 	}
+	AdditionalEstimatesCalculate((ade_est_data_t *)p_est);
 	return true;
 }
 
