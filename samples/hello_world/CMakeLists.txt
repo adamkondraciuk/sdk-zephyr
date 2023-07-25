@@ -15,4 +15,7 @@ target_sources(app PRIVATE
     src/sram.c
     src/ble_gatt_service.c
     src/bas_gatt.c
+    ${app_sources}
 )
+
+zephyr_library_include_directories(${ZEPHYR_BASE}/samples/bluetooth)

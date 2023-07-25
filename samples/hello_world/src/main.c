@@ -23,6 +23,9 @@
 //TODO: temporary
 #include "sram.h"
 
+//BLE
+#include "ble_gatt_service.h"
+
 /* size of stack area used by each thread */
 #define STACKSIZE 1024
 #define MEAS_PRIORITY 0
@@ -153,11 +156,12 @@ static bool my_bt_send_function(void * data, size_t num_of_bytes)
 {
 	static uint32_t frame_counter_check = 0;
 	bt_data_queue_t * bt_data = (bt_data_queue_t *)data;
-	int32_t *p_estimate = (int32_t *)&bt_data->read_estimates;
+	// int32_t *p_estimate = (int32_t *)&bt_data->read_estimates;
 	printk("Frame %u\n", bt_data->counter);
-	for (uint8_t i = 0; i < CONFIG_ADC_MAX_NUMBER_OF_CHANNELS; i++) {
-		printk("%s = %d\n", ADC_CHANNEL_NAME_GET(ADE9000, i), p_estimate[i]);
-	}
+	estimates_notify(data, num_of_bytes);
+	// for (uint8_t i = 0; i < CONFIG_ADC_MAX_NUMBER_OF_CHANNELS; i++) {
+	// 	printk("%s = %d\n", ADC_CHANNEL_NAME_GET(ADE9000, i), p_estimate[i]);
+	// }
 	printk("Frame check %u / %u\n", bt_data->counter, frame_counter_check);
 	if (frame_counter_check != bt_data->counter) {
 		k_sleep(K_FOREVER);
@@ -168,6 +172,11 @@ static bool my_bt_send_function(void * data, size_t num_of_bytes)
 
 void bluetooth_comm(void)
 {
+	if(bt_innit()){
+		printk("Bluetooth initialized\n");
+	} else {
+		ERROR_REPORT("Bluetooth initialization failed\n");
+	}
 	//TODO to be removed when bt transfer is added
 	const uint32_t max_bt_delay_ms = 100;
 	uint32_t transfer_delay_sim;
