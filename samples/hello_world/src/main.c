@@ -159,11 +159,12 @@ static bool my_bt_send_function(void * data, size_t num_of_bytes)
 
 void bluetooth_comm(void)
 {
-	if(bt_innit()){
-		printk("Bluetooth initialized\n");
-	} else {
-		ERROR_REPORT("Bluetooth initialization failed\n");
-	}
+	bt_innit();
+	// if(!bt_innit()){
+	// 	printk("Bluetooth initialized\n");
+	// } else {
+	// 	ERROR_REPORT("Bluetooth  failed\n");
+	// }
 	//TODO to be removed when bt transfer is added
 	const uint32_t max_bt_delay_ms = 100;
 	uint32_t transfer_delay_sim;

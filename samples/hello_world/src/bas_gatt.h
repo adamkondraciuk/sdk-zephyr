@@ -45,7 +45,7 @@ int bt_bas_set_battery_level(uint8_t* level);
 
 void ble_buffer_copy_from_uint8_buffer(uint8_t* src_buffer, size_t src_length);
 
-int bt_set_estimates(uint8_t data[]);
+int bt_set_estimates(uint8_t data[] ,  size_t num_of_bytes);
 
 void ble_buffer_copy_estimates(uint32_t var1, uint32_t var2, uint32_t var3, uint32_t var4);
 
