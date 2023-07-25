@@ -43,6 +43,15 @@ uint8_t* bt_bas_get_battery_level(void);
  */
 int bt_bas_set_battery_level(uint8_t* level);
 
+void ble_buffer_copy_from_uint8_buffer(uint8_t* src_buffer, size_t src_length);
+
+int bt_set_estimates(uint8_t data[]);
+
+void ble_buffer_copy_estimates(uint32_t var1, uint32_t var2, uint32_t var3, uint32_t var4);
+
+int bt_set_new_frame();
+
+uint8_t* get_ble_buffer();
 
 #ifdef __cplusplus
 }

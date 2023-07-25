@@ -1,10 +1,3 @@
-/* main.c - Application main entry point */
-
-/*
- * Copyright (c) 2015-2016 Intel Corporation
- *
- * SPDX-License-Identifier: Apache-2.0
- */
 
 #include <zephyr/types.h>
 #include <stddef.h>
@@ -77,17 +70,22 @@ static struct bt_conn_auth_cb auth_cb_display = {
 	.cancel = auth_cancel,
 };
 
-static void bas_notify(void)
+void estimates_notify(uint8_t* estimate_buff , size_t num_of_bytes)
 {
-	uint8_t* battery_level = bt_bas_get_battery_level();
-
-	battery_level[0]--;
-
-	if (!battery_level[0]) {
-		battery_level[0] = 100U;
+	bt_set_new_frame();
+	uint8_t* ble_buffer = get_ble_buffer();
+	int i = 0;
+	while(true){
+		if(i+16 > num_of_bytes){
+			ble_buffer_copy_from_uint8_buffer(estimate_buff + i, num_of_bytes-i);
+			bt_set_estimates(ble_buffer);
+			break;
+		}
+		ble_buffer_copy_from_uint8_buffer(estimate_buff + i, 16);
+		bt_set_estimates(ble_buffer);
+		i=i+16;
 	}
-
-	bt_bas_set_battery_level(battery_level);
+	
 }
 
 static void hrs_notify(void)
@@ -103,34 +101,36 @@ static void hrs_notify(void)
 	bt_hrs_notify(heartrate);
 }
 
-void bt_innit(void){
+int bt_innit(void){
 	int err;
 
 	err = bt_enable(NULL);
 	if (err) {
 		printk("Bluetooth init failed (err %d)\n", err);
-		return;
+		return 1;
 	}
 
 	bt_ready();
 
 	bt_conn_auth_cb_register(&auth_cb_display);
+	return 0;
 }
 
-void main(void)
-{
+//TODO to be removed 
+// void main_loop(void)
+// {
 	
 
-	/* Implement notification. At the moment there is no suitable way
-	 * of starting delayed work so we do it here
-	 */
-	while (1) {
-		//k_sleep(K_SECONDS(1));
+// 	/* Implement notification. At the moment there is no suitable way
+// 	 * of starting delayed work so we do it here
+// 	 */
+// 	while (1) {
+// 		//k_sleep(K_SECONDS(1));
 
-		/* Heartrate measurements simulation */
-		hrs_notify();
+// 		/* Heartrate measurements simulation */
+// 		hrs_notify();
 
-		/* Battery level simulation */
-		bas_notify();
-	}
-}
+// 		/* Battery level simulation */
+// 		bas_notify();
+// 	}
+// }
