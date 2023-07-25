@@ -6,9 +6,7 @@
 
 
 void bt_init(void);
-void connected(struct bt_conn *conn, uint8_t err);
-void disconnected(struct bt_conn *conn, uint8_t reason);
-void auth_cancel(struct bt_conn *conn);
+
 void bas_notify(void);
 void hrs_notify(void);
 
