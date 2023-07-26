@@ -100,19 +100,6 @@ void estimates_meas(void)
 	uint8_t queue_pos = 0;
 	uint64_t timestamp = 0;
 	// TODO: error handling
-	init_leds();
-	(void)test_leds();
-
-
-    if (!SRAMInit()) {
-		ERROR_REPORT("Error while initializing SRAM\n");
-	}
-
-	SRAMReset();
-	k_sleep(K_MSEC(100));
-	if (!SRAMTest()) {
-		ERROR_REPORT("Error while testing SRAM\n");
-	}
 
 	if (!ADE9000.initialize(NULL)) {
 		ERROR_REPORT("Error while initializing ADE9000\n");

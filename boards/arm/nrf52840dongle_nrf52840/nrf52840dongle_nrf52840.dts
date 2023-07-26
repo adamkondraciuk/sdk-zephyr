@@ -151,9 +151,6 @@
 	compatible = "nordic,nrf-twi";
 	/* Cannot be used together with spi1. */
 	/* status = "okay"; */
-	pinctrl-0 = <&i2c1_default>;
-	pinctrl-1 = <&i2c1_sleep>;
-	pinctrl-names = "default", "sleep";
 };
 
 &pwm0 {
@@ -169,10 +166,7 @@
  */
 &spi2 {
 	compatible = "nordic,nrf-spim";
-	status = "okay";
-	pinctrl-0 = <&spi2_default>;
-	pinctrl-1 = <&spi2_sleep>;
-	pinctrl-names = "default", "sleep";
+	/*status = "okay";*/
 };
 
 &spi1 {

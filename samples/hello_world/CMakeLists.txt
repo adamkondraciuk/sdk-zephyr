@@ -10,7 +10,4 @@ target_sources(app PRIVATE
     src/ade9000.c
     src/ade9000Estimates.c
     src/ade9000Interface.c
-    src/pcal6408apwj.c
-    src/SRAMInterface.c
-    src/sram.c
 )

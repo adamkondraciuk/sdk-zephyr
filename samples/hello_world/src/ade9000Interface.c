@@ -16,7 +16,7 @@
 #define ADE9000_CS_PIN   0x1F // 31
 #define ADE9000_MOSI_PIN 0X20 // 32
 #define ADE9000_MISO_PIN 0x18 // 24
-#define ADE9000_SCK_PIN  0x13 // default 22
+#define ADE9000_SCK_PIN  22 // default 22
 
 static volatile uint8_t m_rx_buffer[6];
 static volatile uint8_t m_tx_buffer[4];
@@ -134,7 +134,7 @@ bool ADE9000InterfaceRegRead(uint16_t addr ,uint32_t * rcv_data, unsigned char r
         printk("  <->");
         for (uint32_t i = 2; i < rcv_lenght + 2; i++)
         {
-            printk(" %02X", m_rx_buffer[i]); 
+            printk(" %02X", m_rx_buffer[i]);
         }
         printk("\n");
     }
@@ -149,7 +149,7 @@ bool ADE9000InterfaceRegRead(uint16_t addr ,uint32_t * rcv_data, unsigned char r
 bool ADE9000InterfaceRegWriteAndCheck(uint16_t addr , uint32_t data , unsigned char length)
 {
     uint32_t rcv_data;
-#if defined(LOG_ADE9000INTERFACE) && (LOG_ADE9000INTERFACE == 1)    
+#if defined(LOG_ADE9000INTERFACE) && (LOG_ADE9000INTERFACE == 1)
     printk("WriteAndCheck\n  ");
 #endif
     ADE9000InterfaceRegWrite(addr, data, length);
