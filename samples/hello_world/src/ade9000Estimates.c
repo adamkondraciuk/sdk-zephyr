@@ -68,27 +68,29 @@ static void AdditionalEstimatesCalculate(ade_est_data_t * estimates)
 	estimates->Imean = (estimates->IA + estimates->IB + estimates->IC) / 3;
 	estimates->Umean = (estimates->VA + estimates->VB + estimates->VC) / 3;
 
-	ea_last[0] += estimates->AWATTHR;
-	ea_last[1] += estimates->BWATTHR;
-	ea_last[2] += estimates->CWATTHR;
+	ea_last[0] = (estimates->AWATTHR > 0) ? (ea_last[0] + estimates->AWATTHR) : (ea_last[0]);
+	ea_last[1] = (estimates->BWATTHR > 0) ? (ea_last[1] + estimates->BWATTHR) : (ea_last[1]);
+	ea_last[2] = (estimates->CWATTHR > 0) ? (ea_last[2] + estimates->CWATTHR) : (ea_last[2]);
 	estimates->AWATTHR = ea_last[0];
 	estimates->BWATTHR = ea_last[1];
 	estimates->CWATTHR = ea_last[2];
+	estimates->WATTHR = estimates->AWATTHR + estimates->BWATTHR + estimates->CWATTHR;
 
-	er_last[0] += estimates->AVARHR;
-	er_last[1] += estimates->BVARHR;
-	er_last[2] += estimates->CVARHR;
+	er_last[0] = (estimates->AVARHR > 0) ? (er_last[0] + estimates->AVARHR) : (er_last[0]);
+	er_last[1] = (estimates->BVARHR > 0) ? (er_last[1] + estimates->BVARHR) : (er_last[1]);
+	er_last[2] = (estimates->CVARHR > 0) ? (er_last[2] + estimates->CVARHR) : (er_last[2]);
 	estimates->AVARHR = er_last[0];
 	estimates->BVARHR = er_last[1];
 	estimates->CVARHR = er_last[2];
+	estimates->WARTHR = estimates->AVARHR + estimates->BVARHR + estimates->CVARHR;
 
 	estimates->P = estimates->AWATT + estimates->BWATT + estimates->CWATT;
 	estimates->Q = estimates->AVAR + estimates->BVAR + estimates->CVAR;
 	estimates->S = estimates->AVA + estimates->BVA + estimates->CVA;
 
-	estimates->VAB = (int32_t)((estimates->VA + estimates->VB) / (2 * sqrt(3)));
-	estimates->VBC = (int32_t)((estimates->VB + estimates->VC) / (2 * sqrt(3)));
-	estimates->VCA = (int32_t)((estimates->VC + estimates->VA) / (2 * sqrt(3)));
+	estimates->VAB = (int32_t)(((estimates->VA + estimates->VB) / 2) * sqrt(3));
+	estimates->VBC = (int32_t)(((estimates->VB + estimates->VC) / 2) * sqrt(3));
+	estimates->VCA = (int32_t)(((estimates->VC + estimates->VA) / 2) * sqrt(3));
 }
 
 bool ADE9000EstimatesAllEstimates1sRead(void *p_est)

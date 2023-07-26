@@ -124,22 +124,22 @@ static void StoreCoeffs(SEleFlashDataCal *fd)
 	while(1);
 	}
 	//default_coeff = 14528733;
-	default_coeff = -330;
+	default_coeff = 383;
 	ADE9000InterfaceRegWriteAndCheck(R_APHCAL0, default_coeff, 4);
 	ADE9000InterfaceRegWriteAndCheck(R_BPHCAL0, default_coeff, 4);
 	ADE9000InterfaceRegWriteAndCheck(R_CPHCAL0, default_coeff, 4);
 
-	default_coeff = -130301663;
-	ADE9000InterfaceRegWriteAndCheck(R_AIGAIN, default_coeff, 4);
-	ADE9000InterfaceRegWriteAndCheck(R_BIGAIN, default_coeff, 4);
-	ADE9000InterfaceRegWriteAndCheck(R_CIGAIN, default_coeff, 4);
+	default_coeff = 0;
+	ADE9000InterfaceRegWriteAndCheck(R_AIGAIN, -95119123, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BIGAIN, -94938644, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CIGAIN, -95003782, 4);
 
-	default_coeff = -132382530;
-	ADE9000InterfaceRegWriteAndCheck(R_AVGAIN, default_coeff, 4);
-	ADE9000InterfaceRegWriteAndCheck(R_BVGAIN, default_coeff, 4);
-	ADE9000InterfaceRegWriteAndCheck(R_CVGAIN, default_coeff, 4);
+	default_coeff = 0;
+	ADE9000InterfaceRegWriteAndCheck(R_AVGAIN, -115926529, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BVGAIN, -115971651, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CVGAIN, -115894056, 4);
 
-	default_coeff = 1;
+	default_coeff = 0;
 	ADE9000InterfaceRegWriteAndCheck(R_AIRMSOS, default_coeff, 4);
 	ADE9000InterfaceRegWriteAndCheck(R_BIRMSOS, default_coeff, 4);
 	ADE9000InterfaceRegWriteAndCheck(R_CIRMSOS, default_coeff, 4);
@@ -159,10 +159,10 @@ static void StoreCoeffs(SEleFlashDataCal *fd)
 	ADE9000InterfaceRegWriteAndCheck(R_BVAROS, default_coeff, 4);
 	ADE9000InterfaceRegWriteAndCheck(R_CVAROS, default_coeff, 4);
 
-	default_coeff = 40116187;
-	ADE9000InterfaceRegWriteAndCheck(R_APGAIN, default_coeff, 4);
-	ADE9000InterfaceRegWriteAndCheck(R_BPGAIN, default_coeff, 4);
-	ADE9000InterfaceRegWriteAndCheck(R_CPGAIN, default_coeff, 4);
+	default_coeff = 0;
+	ADE9000InterfaceRegWriteAndCheck(R_APGAIN, 45687846, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_BPGAIN, 45903740, 4);
+	ADE9000InterfaceRegWriteAndCheck(R_CPGAIN, 45847370, 4);
 }
 
 void EnergyAccConfigure(void)
