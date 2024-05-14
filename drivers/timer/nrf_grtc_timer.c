@@ -14,8 +14,21 @@
 #include <zephyr/drivers/timer/nrf_grtc_timer.h>
 #include <nrfx_grtc.h>
 #include <zephyr/sys/math_extras.h>
+#include <zephyr/drivers/pinctrl.h>
 
 #define GRTC_NODE DT_NODELABEL(grtc)
+
+struct nrf_grtc_clkout_config {
+	const struct pinctrl_dev_config *pcfg;
+};
+
+#define NRF_GRTC_CLKOUT_DEVICE \
+	PINCTRL_DT_DEFINE(GRTC_NODE); \
+	static const struct nrf_grtc_clkout_config grtc_clkout_config = { \
+		.pcfg = PINCTRL_DT_DEV_CONFIG_GET(GRTC_NODE), \
+	};
+
+NRF_GRTC_CLKOUT_DEVICE
 
 /* Ensure that GRTC properties in devicetree are defined correctly. */
 #if !DT_NODE_HAS_PROP(GRTC_NODE, owned_channels)
@@ -351,6 +364,41 @@ int z_nrf_grtc_timer_capture_read(int32_t chan, uint64_t *captured_time)
 
 	return 0;
 }
+
+#if 1 // using CLKOUT32
+int z_nrf_grtc_clkout32_set(bool enable)
+{
+	nrfx_err_t ret;
+	ret = nrfx_grtc_clock_output_set(NRF_GRTC_CLKOUT_32K, enable, 0, 1);
+
+	//(void)pinctrl_apply_state(grtc_clkout_config.pcfg,
+	//				  PINCTRL_STATE_DEFAULT);
+	if (ret != NRFX_SUCCESS) {
+		// TODO: error codes
+		return -1;
+	}
+	return 0;
+}
+#endif
+
+#if 1 // using CLKOUT32
+int z_nrf_grtc_clkfast_set(bool enable, uint32_t divider)
+{
+	nrfx_err_t ret;
+
+	__ASSERT_NO_MSG(divider > 1 && divider < 255)
+
+	ret = nrfx_grtc_clock_output_set(NRF_GRTC_CLKOUT_FAST, enable, 8+32, 255);
+
+	//(void)pinctrl_apply_state(grtc_clkout_config.pcfg,
+	//				  PINCTRL_STATE_DEFAULT);
+	if (ret != NRFX_SUCCESS) {
+		// TODO: error codes
+		return -1;
+	}
+	return 0;
+}
+#endif
 
 #if defined(CONFIG_NRF_GRTC_SLEEP_ALLOWED)
 int z_nrf_grtc_wakeup_prepare(uint64_t wake_time_us)

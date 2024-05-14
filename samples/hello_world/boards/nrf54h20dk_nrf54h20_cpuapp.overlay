@@ -1,0 +1,14 @@
+&pinctrl {
+	grtc_default_alt: grtc_default_alt {
+		group1 {
+			psels = <NRF_PSEL(GRTC_CLKOUT_32K, 0, 1)>,
+				<NRF_PSEL(GRTC_CLKOUT_FAST, 1, 8)>;
+		};
+	};
+};
+
+&grtc {
+	compatible = "nordic,nrf-grtc";
+	pinctrl-0 = <&grtc_default_alt>;
+	pinctrl-names = "default";
+};

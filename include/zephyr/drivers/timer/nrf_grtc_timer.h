@@ -195,6 +195,9 @@ int z_nrf_grtc_wakeup_prepare(uint64_t wake_time_us);
  */
 int nrf_grtc_timer_clock_driver_init(void);
 
+int z_nrf_grtc_clkout32_set(bool enable);
+int z_nrf_grtc_clkfast_set(bool enable, uint32_t divider);
+
 #ifdef __cplusplus
 }
 #endif

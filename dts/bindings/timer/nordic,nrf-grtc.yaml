@@ -11,6 +11,7 @@ compatible: "nordic,nrf-grtc"
 include:
   - "base.yaml"
   - "nordic,split-channels.yaml"
+  - "pinctrl-device.yaml"
 
 properties:
   reg:
@@ -23,3 +24,6 @@ properties:
     description: Number of capture/compare channels
     type: int
     required: true
+
+  pinctrl-0:
+    required: false
