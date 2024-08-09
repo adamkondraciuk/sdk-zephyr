@@ -1101,6 +1101,24 @@
 				status = "disabled";
 				interrupts = <470 NRF_DEFAULT_IRQ_PRIORITY>;
 			};
+
+			tdm130: tdm@992000 {
+				compatible = "nordic,nrf-tdm";
+				#address-cells = <1>;
+				#size-cells = <0>;
+				reg = <0x992000 0x1000>;
+				interrupts = <402 NRF_DEFAULT_IRQ_PRIORITY>;
+				status = "disabled";
+			};
+
+			tdm131: tdm@997000 {
+				compatible = "nordic,nrf-tdm";
+				#address-cells = <1>;
+				#size-cells = <0>;
+				reg = <0x997000 0x1000>;
+				interrupts = <407 NRF_DEFAULT_IRQ_PRIORITY>;
+				status = "disabled";
+			};
 		};
 	};
 
