@@ -1,0 +1,5700 @@
+[gpio_instance_0]
+ADDRESS = 0x5f938000
+
+[gpio_own_0]
+PIN_0 = "NotOwn"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "NotOwn"
+PIN_4 = "NotOwn"
+PIN_5 = "NotOwn"
+PIN_6 = "NotOwn"
+PIN_7 = "NotOwn"
+PIN_8 = "Own"
+PIN_9 = "Own"
+PIN_10 = "Own"
+PIN_11 = "Own"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_0]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_0]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_1]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_2]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_3]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_4]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_5]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_6]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_7]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_8]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_9]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_10]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_11]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_12]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_13]
+CTRLSEL = 7
+
+[gpio_instance_1]
+ADDRESS = 0x5f938200
+
+[gpio_own_1]
+PIN_0 = "NotOwn"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "Own"
+PIN_4 = "Own"
+PIN_5 = "Own"
+PIN_6 = "Own"
+PIN_7 = "NotOwn"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_1]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_14]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_15]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_16]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_17]
+CTRLSEL = 5
+
+[gpio_pin_ctrlsel_18]
+CTRLSEL = 5
+
+[gpio_pin_ctrlsel_19]
+CTRLSEL = 5
+
+[gpio_pin_ctrlsel_20]
+CTRLSEL = 5
+
+[gpio_pin_ctrlsel_21]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_22]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_23]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_24]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_25]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_26]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_27]
+CTRLSEL = 7
+
+[gpio_instance_2]
+ADDRESS = 0x5f938400
+
+[gpio_own_2]
+PIN_0 = "NotOwn"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "NotOwn"
+PIN_4 = "Own"
+PIN_5 = "Own"
+PIN_6 = "Own"
+PIN_7 = "Own"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_2]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_28]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_29]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_30]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_31]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_32]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_33]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_34]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_35]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_36]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_37]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_38]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_39]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_40]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_41]
+CTRLSEL = 7
+
+[gpio_instance_3]
+ADDRESS = 0x5f938c00
+
+[gpio_own_3]
+PIN_0 = "Own"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "Own"
+PIN_4 = "NotOwn"
+PIN_5 = "Own"
+PIN_6 = "NotOwn"
+PIN_7 = "Own"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_3]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_42]
+CTRLSEL = 4
+
+[gpio_pin_ctrlsel_43]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_44]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_45]
+CTRLSEL = 0
+
+[gpio_pin_ctrlsel_46]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_47]
+CTRLSEL = 4
+
+[gpio_pin_ctrlsel_48]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_49]
+CTRLSEL = 4
+
+[gpio_pin_ctrlsel_50]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_51]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_52]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_53]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_54]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_55]
+CTRLSEL = 7
+
+[gpio_instance_4]
+ADDRESS = 0x5f939200
+
+[gpio_own_4]
+PIN_0 = "Own"
+PIN_1 = "Own"
+PIN_2 = "Own"
+PIN_3 = "Own"
+PIN_4 = "Own"
+PIN_5 = "Own"
+PIN_6 = "NotOwn"
+PIN_7 = "NotOwn"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_4]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_56]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_57]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_58]
+CTRLSEL = 2
+
+[gpio_pin_ctrlsel_59]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_60]
+CTRLSEL = 6
+
+[gpio_pin_ctrlsel_61]
+CTRLSEL = 6
+
+[gpio_pin_ctrlsel_62]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_63]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_64]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_65]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_66]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_67]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_68]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_69]
+CTRLSEL = 7
+
+[gpio_instance_5]
+ADDRESS = 0xffffffff
+
+[gpio_own_5]
+PIN_0 = "NotOwn"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "NotOwn"
+PIN_4 = "NotOwn"
+PIN_5 = "NotOwn"
+PIN_6 = "NotOwn"
+PIN_7 = "NotOwn"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_5]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_70]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_71]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_72]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_73]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_74]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_75]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_76]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_77]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_78]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_79]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_80]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_81]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_82]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_83]
+CTRLSEL = 7
+
+[gpio_instance_6]
+ADDRESS = 0xffffffff
+
+[gpio_own_6]
+PIN_0 = "NotOwn"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "NotOwn"
+PIN_4 = "NotOwn"
+PIN_5 = "NotOwn"
+PIN_6 = "NotOwn"
+PIN_7 = "NotOwn"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_6]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_84]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_85]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_86]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_87]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_88]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_89]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_90]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_91]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_92]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_93]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_94]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_95]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_96]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_97]
+CTRLSEL = 7
+
+[gpio_instance_7]
+ADDRESS = 0xffffffff
+
+[gpio_own_7]
+PIN_0 = "NotOwn"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "NotOwn"
+PIN_4 = "NotOwn"
+PIN_5 = "NotOwn"
+PIN_6 = "NotOwn"
+PIN_7 = "NotOwn"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_7]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_98]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_99]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_100]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_101]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_102]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_103]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_104]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_105]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_106]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_107]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_108]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_109]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_110]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_111]
+CTRLSEL = 7
+
+[gpio_instance_8]
+ADDRESS = 0xffffffff
+
+[gpio_own_8]
+PIN_0 = "NotOwn"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "NotOwn"
+PIN_4 = "NotOwn"
+PIN_5 = "NotOwn"
+PIN_6 = "NotOwn"
+PIN_7 = "NotOwn"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_8]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_112]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_113]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_114]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_115]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_116]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_117]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_118]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_119]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_120]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_121]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_122]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_123]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_124]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_125]
+CTRLSEL = 7
+
+[gpio_instance_9]
+ADDRESS = 0xffffffff
+
+[gpio_own_9]
+PIN_0 = "NotOwn"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
+PIN_3 = "NotOwn"
+PIN_4 = "NotOwn"
+PIN_5 = "NotOwn"
+PIN_6 = "NotOwn"
+PIN_7 = "NotOwn"
+PIN_8 = "NotOwn"
+PIN_9 = "NotOwn"
+PIN_10 = "NotOwn"
+PIN_11 = "NotOwn"
+PIN_12 = "NotOwn"
+PIN_13 = "NotOwn"
+
+[gpio_secure_9]
+PIN_0 = "Secure"
+PIN_1 = "Secure"
+PIN_2 = "Secure"
+PIN_3 = "Secure"
+PIN_4 = "Secure"
+PIN_5 = "Secure"
+PIN_6 = "Secure"
+PIN_7 = "Secure"
+PIN_8 = "Secure"
+PIN_9 = "Secure"
+PIN_10 = "Secure"
+PIN_11 = "Secure"
+PIN_12 = "Secure"
+PIN_13 = "Secure"
+
+[gpio_pin_ctrlsel_126]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_127]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_128]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_129]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_130]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_131]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_132]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_133]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_134]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_135]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_136]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_137]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_138]
+CTRLSEL = 7
+
+[gpio_pin_ctrlsel_139]
+CTRLSEL = 7
+
+[mem_config_0]
+READ = "Allowed"
+WRITE = "NotAllowed"
+EXECUTE = "Allowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 2
+ADDRESS = 0x0e0a6000
+
+[mem_size_0]
+SIZE = 0x5a000
+
+[mem_config_1]
+READ = "Allowed"
+WRITE = "Allowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 2
+ADDRESS = 0x0e100000
+
+[mem_size_1]
+SIZE = 0xe5000
+
+[mem_config_2]
+READ = "Allowed"
+WRITE = "Allowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 2
+ADDRESS = 0x2f010000
+
+[mem_size_2]
+SIZE = 0x41000
+
+[mem_config_3]
+READ = "Allowed"
+WRITE = "Allowed"
+EXECUTE = "NotAllowed"
+SECURE = "NonSecure"
+NSC = "Disabled"
+OWNERID = 2
+ADDRESS = 0x2f0bf000
+
+[mem_size_3]
+SIZE = 0x1000
+
+[mem_config_4]
+READ = "Allowed"
+WRITE = "Allowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 2
+ADDRESS = 0x2f890000
+
+[mem_size_4]
+SIZE = 0x10000
+
+[mem_config_5]
+READ = "Allowed"
+WRITE = "Allowed"
+EXECUTE = "NotAllowed"
+SECURE = "NonSecure"
+NSC = "Disabled"
+OWNERID = 2
+ADDRESS = 0x2fc12000
+
+[mem_size_5]
+SIZE = 0x2000
+
+[mem_config_6]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_6]
+SIZE = 0xffffffff
+
+[mem_config_7]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_7]
+SIZE = 0xffffffff
+
+[mem_config_8]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_8]
+SIZE = 0xffffffff
+
+[mem_config_9]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_9]
+SIZE = 0xffffffff
+
+[mem_config_10]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_10]
+SIZE = 0xffffffff
+
+[mem_config_11]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_11]
+SIZE = 0xffffffff
+
+[mem_config_12]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_12]
+SIZE = 0xffffffff
+
+[mem_config_13]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_13]
+SIZE = 0xffffffff
+
+[mem_config_14]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_14]
+SIZE = 0xffffffff
+
+[mem_config_15]
+READ = "NotAllowed"
+WRITE = "NotAllowed"
+EXECUTE = "NotAllowed"
+SECURE = "Secure"
+NSC = "Disabled"
+OWNERID = 15
+ADDRESS = 0xfffff000
+
+[mem_size_15]
+SIZE = 0xffffffff
+
+[periph_config_0]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 2
+ADDRESS = 0x5f086000
+
+[periph_config_1]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 2
+ADDRESS = 0x5f095000
+
+[periph_config_2]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 2
+ADDRESS = 0x5f8c2000
+
+[periph_config_3]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 2
+ADDRESS = 0x5f8d8000
+
+[periph_config_4]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 2
+ADDRESS = 0x5f982000
+
+[periph_config_5]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 2
+ADDRESS = 0x5f992000
+
+[periph_config_6]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 2
+ADDRESS = 0x5f9a4000
+
+[periph_config_7]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 2
+ADDRESS = 0x5f9d5000
+
+[periph_config_8]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_9]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_10]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_11]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_12]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_13]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_14]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_15]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_16]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_17]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_18]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_19]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_20]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_21]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_22]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_23]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_24]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_25]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_26]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_27]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_28]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_29]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_30]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_31]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_32]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_33]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_34]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_35]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_36]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_37]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_38]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_39]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_40]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_41]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_42]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_43]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_44]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_45]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_46]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_47]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_48]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_49]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_50]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_51]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_52]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_53]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_54]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_55]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_56]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_57]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_58]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_59]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_60]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_61]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_62]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_63]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_64]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_65]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_66]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_67]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_68]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_69]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_70]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_71]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_72]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_73]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_74]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_75]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_76]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_77]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_78]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_79]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_80]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_81]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_82]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_83]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_84]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_85]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_86]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_87]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_88]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_89]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_90]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_91]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_92]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_93]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_94]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_95]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_96]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_97]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_98]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_99]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_100]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_101]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_102]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_103]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_104]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_105]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_106]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_107]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_108]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_109]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_110]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_111]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_112]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_113]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_114]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_115]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_116]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_117]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_118]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_119]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_120]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_121]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_122]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_123]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_124]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_125]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_126]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_127]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_128]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_129]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_130]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_131]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_132]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_133]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_134]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_135]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_136]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_137]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_138]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_139]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_140]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_141]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_142]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_143]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_144]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_145]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_146]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_147]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_148]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_149]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_150]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_151]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_152]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_153]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_154]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_155]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_156]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_157]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_158]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_159]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_160]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_161]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_162]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_163]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_164]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_165]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_166]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_167]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_168]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_169]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_170]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_171]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_172]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_173]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_174]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_175]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_176]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_177]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_178]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_179]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_180]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_181]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_182]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_183]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_184]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_185]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_186]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_187]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_188]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_189]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_190]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[periph_config_191]
+SECURE = "Secure"
+DMASEC = "Secure"
+PROCESSOR = 15
+ADDRESS = 0xfffff000
+
+[gpiote_instance_0]
+ADDRESS = 0x5f934000
+
+[gpiote_ch_own_0]
+CH_0 = "Own"
+CH_1 = "Own"
+CH_2 = "Own"
+CH_3 = "Own"
+CH_4 = "Own"
+CH_5 = "Own"
+CH_6 = "Own"
+CH_7 = "Own"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[gpiote_ch_secure_0]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[gpiote_instance_1]
+ADDRESS = 0xffffffff
+
+[gpiote_ch_own_1]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[gpiote_ch_secure_1]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[gpiote_instance_2]
+ADDRESS = 0xffffffff
+
+[gpiote_ch_own_2]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[gpiote_ch_secure_2]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[gpiote_instance_3]
+ADDRESS = 0xffffffff
+
+[gpiote_ch_own_3]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[gpiote_ch_secure_3]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[ipct_global_instance_0]
+ADDRESS = 0xffffffff
+
+[ipct_global_ch_own_0]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[ipct_global_ch_secure_0]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[ipct_global_interrupt_own_0]
+INT_0 = "NotOwn"
+INT_1 = "NotOwn"
+INT_2 = "NotOwn"
+INT_3 = "NotOwn"
+INT_4 = "NotOwn"
+INT_5 = "NotOwn"
+INT_6 = "NotOwn"
+INT_7 = "NotOwn"
+INT_8 = "NotOwn"
+INT_9 = "NotOwn"
+INT_10 = "NotOwn"
+INT_11 = "NotOwn"
+INT_12 = "NotOwn"
+INT_13 = "NotOwn"
+INT_14 = "NotOwn"
+INT_15 = "NotOwn"
+INT_16 = "NotOwn"
+INT_17 = "NotOwn"
+INT_18 = "NotOwn"
+INT_19 = "NotOwn"
+INT_20 = "NotOwn"
+INT_21 = "NotOwn"
+INT_22 = "NotOwn"
+INT_23 = "NotOwn"
+INT_24 = "NotOwn"
+INT_25 = "NotOwn"
+INT_26 = "NotOwn"
+INT_27 = "NotOwn"
+INT_28 = "NotOwn"
+INT_29 = "NotOwn"
+INT_30 = "NotOwn"
+INT_31 = "NotOwn"
+
+[ipct_global_interrupt_secure_0]
+INT_0 = "Secure"
+INT_1 = "Secure"
+INT_2 = "Secure"
+INT_3 = "Secure"
+INT_4 = "Secure"
+INT_5 = "Secure"
+INT_6 = "Secure"
+INT_7 = "Secure"
+INT_8 = "Secure"
+INT_9 = "Secure"
+INT_10 = "Secure"
+INT_11 = "Secure"
+INT_12 = "Secure"
+INT_13 = "Secure"
+INT_14 = "Secure"
+INT_15 = "Secure"
+INT_16 = "Secure"
+INT_17 = "Secure"
+INT_18 = "Secure"
+INT_19 = "Secure"
+INT_20 = "Secure"
+INT_21 = "Secure"
+INT_22 = "Secure"
+INT_23 = "Secure"
+INT_24 = "Secure"
+INT_25 = "Secure"
+INT_26 = "Secure"
+INT_27 = "Secure"
+INT_28 = "Secure"
+INT_29 = "Secure"
+INT_30 = "Secure"
+INT_31 = "Secure"
+
+[ipct_global_instance_1]
+ADDRESS = 0xffffffff
+
+[ipct_global_ch_own_1]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[ipct_global_ch_secure_1]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[ipct_global_interrupt_own_1]
+INT_0 = "NotOwn"
+INT_1 = "NotOwn"
+INT_2 = "NotOwn"
+INT_3 = "NotOwn"
+INT_4 = "NotOwn"
+INT_5 = "NotOwn"
+INT_6 = "NotOwn"
+INT_7 = "NotOwn"
+INT_8 = "NotOwn"
+INT_9 = "NotOwn"
+INT_10 = "NotOwn"
+INT_11 = "NotOwn"
+INT_12 = "NotOwn"
+INT_13 = "NotOwn"
+INT_14 = "NotOwn"
+INT_15 = "NotOwn"
+INT_16 = "NotOwn"
+INT_17 = "NotOwn"
+INT_18 = "NotOwn"
+INT_19 = "NotOwn"
+INT_20 = "NotOwn"
+INT_21 = "NotOwn"
+INT_22 = "NotOwn"
+INT_23 = "NotOwn"
+INT_24 = "NotOwn"
+INT_25 = "NotOwn"
+INT_26 = "NotOwn"
+INT_27 = "NotOwn"
+INT_28 = "NotOwn"
+INT_29 = "NotOwn"
+INT_30 = "NotOwn"
+INT_31 = "NotOwn"
+
+[ipct_global_interrupt_secure_1]
+INT_0 = "Secure"
+INT_1 = "Secure"
+INT_2 = "Secure"
+INT_3 = "Secure"
+INT_4 = "Secure"
+INT_5 = "Secure"
+INT_6 = "Secure"
+INT_7 = "Secure"
+INT_8 = "Secure"
+INT_9 = "Secure"
+INT_10 = "Secure"
+INT_11 = "Secure"
+INT_12 = "Secure"
+INT_13 = "Secure"
+INT_14 = "Secure"
+INT_15 = "Secure"
+INT_16 = "Secure"
+INT_17 = "Secure"
+INT_18 = "Secure"
+INT_19 = "Secure"
+INT_20 = "Secure"
+INT_21 = "Secure"
+INT_22 = "Secure"
+INT_23 = "Secure"
+INT_24 = "Secure"
+INT_25 = "Secure"
+INT_26 = "Secure"
+INT_27 = "Secure"
+INT_28 = "Secure"
+INT_29 = "Secure"
+INT_30 = "Secure"
+INT_31 = "Secure"
+
+[dppi_local_instance_0]
+ADDRESS = 0xffffffff
+
+[dppi_local_ch_secure_0]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_local_ch_link_dir_0]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_local_ch_link_en_0]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_local_chg_secure_0]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_local_instance_1]
+ADDRESS = 0xffffffff
+
+[dppi_local_ch_secure_1]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_local_ch_link_dir_1]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_local_ch_link_en_1]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_local_chg_secure_1]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_0]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_0]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_0]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_0]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_0]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_0]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_0]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_1]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_1]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_1]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_1]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_1]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_1]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_1]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_2]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_2]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_2]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_2]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_2]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_2]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_2]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_3]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_3]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_3]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_3]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_3]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_3]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_3]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_4]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_4]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_4]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_4]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_4]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_4]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_4]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_5]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_5]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_5]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_5]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_5]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_5]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_5]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_6]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_6]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_6]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_6]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_6]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_6]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_6]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_7]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_7]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_7]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_7]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_7]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_7]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_7]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_8]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_8]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_8]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_8]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_8]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_8]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_8]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_9]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_9]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_9]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_9]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_9]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_9]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_9]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_10]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_10]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_10]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_10]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_10]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_10]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_10]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[dppi_global_instance_11]
+ADDRESS = 0xffffffff
+
+[dppi_global_ch_own_11]
+CH_0 = "NotOwn"
+CH_1 = "NotOwn"
+CH_2 = "NotOwn"
+CH_3 = "NotOwn"
+CH_4 = "NotOwn"
+CH_5 = "NotOwn"
+CH_6 = "NotOwn"
+CH_7 = "NotOwn"
+CH_8 = "NotOwn"
+CH_9 = "NotOwn"
+CH_10 = "NotOwn"
+CH_11 = "NotOwn"
+CH_12 = "NotOwn"
+CH_13 = "NotOwn"
+CH_14 = "NotOwn"
+CH_15 = "NotOwn"
+CH_16 = "NotOwn"
+CH_17 = "NotOwn"
+CH_18 = "NotOwn"
+CH_19 = "NotOwn"
+CH_20 = "NotOwn"
+CH_21 = "NotOwn"
+CH_22 = "NotOwn"
+CH_23 = "NotOwn"
+CH_24 = "NotOwn"
+CH_25 = "NotOwn"
+CH_26 = "NotOwn"
+CH_27 = "NotOwn"
+CH_28 = "NotOwn"
+CH_29 = "NotOwn"
+CH_30 = "NotOwn"
+CH_31 = "NotOwn"
+
+[dppi_global_ch_secure_11]
+CH_0 = "Secure"
+CH_1 = "Secure"
+CH_2 = "Secure"
+CH_3 = "Secure"
+CH_4 = "Secure"
+CH_5 = "Secure"
+CH_6 = "Secure"
+CH_7 = "Secure"
+CH_8 = "Secure"
+CH_9 = "Secure"
+CH_10 = "Secure"
+CH_11 = "Secure"
+CH_12 = "Secure"
+CH_13 = "Secure"
+CH_14 = "Secure"
+CH_15 = "Secure"
+CH_16 = "Secure"
+CH_17 = "Secure"
+CH_18 = "Secure"
+CH_19 = "Secure"
+CH_20 = "Secure"
+CH_21 = "Secure"
+CH_22 = "Secure"
+CH_23 = "Secure"
+CH_24 = "Secure"
+CH_25 = "Secure"
+CH_26 = "Secure"
+CH_27 = "Secure"
+CH_28 = "Secure"
+CH_29 = "Secure"
+CH_30 = "Secure"
+CH_31 = "Secure"
+
+[dppi_global_ch_link_dir_11]
+CH_0 = "Source"
+CH_1 = "Source"
+CH_2 = "Source"
+CH_3 = "Source"
+CH_4 = "Source"
+CH_5 = "Source"
+CH_6 = "Source"
+CH_7 = "Source"
+CH_8 = "Source"
+CH_9 = "Source"
+CH_10 = "Source"
+CH_11 = "Source"
+CH_12 = "Source"
+CH_13 = "Source"
+CH_14 = "Source"
+CH_15 = "Source"
+CH_16 = "Source"
+CH_17 = "Source"
+CH_18 = "Source"
+CH_19 = "Source"
+CH_20 = "Source"
+CH_21 = "Source"
+CH_22 = "Source"
+CH_23 = "Source"
+CH_24 = "Source"
+CH_25 = "Source"
+CH_26 = "Source"
+CH_27 = "Source"
+CH_28 = "Source"
+CH_29 = "Source"
+CH_30 = "Source"
+CH_31 = "Source"
+
+[dppi_global_ch_link_en_11]
+CH_0 = "Disabled"
+CH_1 = "Disabled"
+CH_2 = "Disabled"
+CH_3 = "Disabled"
+CH_4 = "Disabled"
+CH_5 = "Disabled"
+CH_6 = "Disabled"
+CH_7 = "Disabled"
+CH_8 = "Disabled"
+CH_9 = "Disabled"
+CH_10 = "Disabled"
+CH_11 = "Disabled"
+CH_12 = "Disabled"
+CH_13 = "Disabled"
+CH_14 = "Disabled"
+CH_15 = "Disabled"
+CH_16 = "Disabled"
+CH_17 = "Disabled"
+CH_18 = "Disabled"
+CH_19 = "Disabled"
+CH_20 = "Disabled"
+CH_21 = "Disabled"
+CH_22 = "Disabled"
+CH_23 = "Disabled"
+CH_24 = "Disabled"
+CH_25 = "Disabled"
+CH_26 = "Disabled"
+CH_27 = "Disabled"
+CH_28 = "Disabled"
+CH_29 = "Disabled"
+CH_30 = "Disabled"
+CH_31 = "Disabled"
+
+[dppi_global_chg_own_11]
+CHG_0 = "NotOwn"
+CHG_1 = "NotOwn"
+CHG_2 = "NotOwn"
+CHG_3 = "NotOwn"
+CHG_4 = "NotOwn"
+CHG_5 = "NotOwn"
+CHG_6 = "NotOwn"
+CHG_7 = "NotOwn"
+CHG_8 = "NotOwn"
+CHG_9 = "NotOwn"
+CHG_10 = "NotOwn"
+CHG_11 = "NotOwn"
+CHG_12 = "NotOwn"
+CHG_13 = "NotOwn"
+CHG_14 = "NotOwn"
+CHG_15 = "NotOwn"
+CHG_16 = "NotOwn"
+CHG_17 = "NotOwn"
+CHG_18 = "NotOwn"
+CHG_19 = "NotOwn"
+CHG_20 = "NotOwn"
+CHG_21 = "NotOwn"
+CHG_22 = "NotOwn"
+CHG_23 = "NotOwn"
+CHG_24 = "NotOwn"
+CHG_25 = "NotOwn"
+CHG_26 = "NotOwn"
+CHG_27 = "NotOwn"
+CHG_28 = "NotOwn"
+CHG_29 = "NotOwn"
+CHG_30 = "NotOwn"
+CHG_31 = "NotOwn"
+
+[dppi_global_chg_secure_11]
+CHG_0 = "Secure"
+CHG_1 = "Secure"
+CHG_2 = "Secure"
+CHG_3 = "Secure"
+CHG_4 = "Secure"
+CHG_5 = "Secure"
+CHG_6 = "Secure"
+CHG_7 = "Secure"
+CHG_8 = "Secure"
+CHG_9 = "Secure"
+CHG_10 = "Secure"
+CHG_11 = "Secure"
+CHG_12 = "Secure"
+CHG_13 = "Secure"
+CHG_14 = "Secure"
+CHG_15 = "Secure"
+CHG_16 = "Secure"
+CHG_17 = "Secure"
+CHG_18 = "Secure"
+CHG_19 = "Secure"
+CHG_20 = "Secure"
+CHG_21 = "Secure"
+CHG_22 = "Secure"
+CHG_23 = "Secure"
+CHG_24 = "Secure"
+CHG_25 = "Secure"
+CHG_26 = "Secure"
+CHG_27 = "Secure"
+CHG_28 = "Secure"
+CHG_29 = "Secure"
+CHG_30 = "Secure"
+CHG_31 = "Secure"
+
+[grtc_cc_own_0]
+CC_0 = "NotOwn"
+CC_1 = "NotOwn"
+CC_2 = "NotOwn"
+CC_3 = "NotOwn"
+CC_4 = "Own"
+CC_5 = "Own"
+CC_6 = "Own"
+CC_7 = "NotOwn"
+CC_8 = "NotOwn"
+CC_9 = "NotOwn"
+CC_10 = "NotOwn"
+CC_11 = "NotOwn"
+CC_12 = "NotOwn"
+CC_13 = "NotOwn"
+CC_14 = "NotOwn"
+CC_15 = "NotOwn"
+
+[grtc_cc_secure_0]
+CC_0 = "Secure"
+CC_1 = "Secure"
+CC_2 = "Secure"
+CC_3 = "Secure"
+CC_4 = "Secure"
+CC_5 = "NonSecure"
+CC_6 = "NonSecure"
+CC_7 = "Secure"
+CC_8 = "Secure"
+CC_9 = "Secure"
+CC_10 = "Secure"
+CC_11 = "Secure"
+CC_12 = "Secure"
+CC_13 = "Secure"
+CC_14 = "Secure"
+CC_15 = "Secure"
+
+[ipcmap_0]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_1]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_2]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_3]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_4]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_5]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_6]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_7]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_8]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_9]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_10]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_11]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_12]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_13]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_14]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[ipcmap_15]
+IPCTCHSINK = 0xff
+DOMAINIDSINK = 15
+IPCTCHSOURCE = 0xff
+DOMAINIDSOURCE = 15
+
+[mailbox_address_0]
+ADDRESS = 0xffffffff
+
+[mailbox_config_0]
+SECURE = "Secure"
+OWNERID = 15
+SIZE = 0xffff
+
+[mailbox_address_1]
+ADDRESS = 0xffffffff
+
+[mailbox_config_1]
+SECURE = "Secure"
+OWNERID = 15
+SIZE = 0xffff
+
+[mailbox_address_2]
+ADDRESS = 0xffffffff
+
+[mailbox_config_2]
+SECURE = "Secure"
+OWNERID = 15
+SIZE = 0xffff
+
+[mailbox_address_3]
+ADDRESS = 0xffffffff
+
+[mailbox_config_3]
+SECURE = "Secure"
+OWNERID = 15
+SIZE = 0xffff
+
+[mailbox_address_4]
+ADDRESS = 0xffffffff
+
+[mailbox_config_4]
+SECURE = "Secure"
+OWNERID = 15
+SIZE = 0xffff
+
+[mailbox_address_5]
+ADDRESS = 0xffffffff
+
+[mailbox_config_5]
+SECURE = "Secure"
+OWNERID = 15
+SIZE = 0xffff
+
+[mailbox_address_6]
+ADDRESS = 0xffffffff
+
+[mailbox_config_6]
+SECURE = "Secure"
+OWNERID = 15
+SIZE = 0xffff
+
+[mailbox_address_7]
+ADDRESS = 0xffffffff
+
+[mailbox_config_7]
+SECURE = "Secure"
+OWNERID = 15
+SIZE = 0xffff
+
+[trace_etbsink_sources_0]
+STMMAINCORE = "NotRequested"
+ETMMAINCORE = "NotRequested"
+STMHWEVENTS = "NotRequested"
+STMPPR = "NotRequested"
+STMFLPR = "NotRequested"
+
+[trace_tpiusink_sources_0]
+STMMAINCORE = "NotRequested"
+ETMMAINCORE = "NotRequested"
+STMHWEVENTS = "NotRequested"
+STMPPR = "NotRequested"
+STMFLPR = "NotRequested"
+
+[trace_etrsink_sources_0]
+STMMAINCORE = "NotRequested"
+ETMMAINCORE = "NotRequested"
+STMHWEVENTS = "NotRequested"
+STMPPR = "NotRequested"
+STMFLPR = "NotRequested"
+
+[trace_portconfig_0]
+PORTCONFIG = "FullSpeed"
+
+[tamper_detection_enable_0]
+GlobalEnable = "Disable"
+VoltageLevel = "Disable"
+ExternalActiveShield = "Disable"
+HardFault = "Disable"
+ApiFault = "Disable"
+AdacFault = "Disable"
+StateFault = "Disable"
+TemperatureFault = "Disable"
+
+[tamper_detection_response0_0]
+VoltageLevel = "ResetOnly"
+Watchdog = "ResetOnly"
+ExternalActiveShield = "ResetOnly"
+InternalDetectors = "ResetOnly"
+HardFault = "ResetOnly"
+ApiFault = "ResetOnly"
+
+[tamper_detection_response1_0]
+AdacFault = "ResetOnly"
+StateFault = "ResetOnly"
+TemperatureFault = "ResetOnly"
+
+[tamper_detection_tempdetectorconfig_0]
+TemperatureDetectionStrategy = "OnServiceCallOnly"
+TemperatureDetectionInterval = "1Hour"
+LowTemperatureThresholdShift = 0xff
+HighTemperatureThresholdShift = 0xff
+
+[tamper_countermeasures_enable_0]
+DPAAES = "Disable"
+DPAPK = "Disable"
+ClockDithering = "Disable"
+
+[initsvtor_0]
+INITSVTOR = 0xe0a6000
+
+[initnsvtor_0]
+INITNSVTOR = 0xffffffff
+
+[ptrextuicr_0]
+PTREXTUICR = 0xe1ff800

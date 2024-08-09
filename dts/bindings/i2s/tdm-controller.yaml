@@ -5,7 +5,7 @@
 
 include: base.yaml
 
-bus: tdm
+bus: i2s
 
 properties:
   "#address-cells":

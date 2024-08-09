@@ -9,8 +9,34 @@
 #include <zephyr/drivers/i2s.h>
 #include "i2s_api_test.h"
 
-K_MEM_SLAB_DEFINE(rx_mem_slab, BLOCK_SIZE, NUM_RX_BLOCKS, 32);
-K_MEM_SLAB_DEFINE(tx_mem_slab, BLOCK_SIZE, NUM_TX_BLOCKS, 32);
+//K_MEM_SLAB_DEFINE(rx_mem_slab, BLOCK_SIZE, NUM_RX_BLOCKS, 32);
+//K_MEM_SLAB_DEFINE(tx_mem_slab, BLOCK_SIZE, NUM_TX_BLOCKS, 32);
+
+#include <zephyr/linker/devicetree_regions.h>
+
+#define TDM(idx)                       DT_NODELABEL(tdm##idx)
+#define TDM_PROP(idx, prop)            DT_PROP(TDM(idx), prop)
+#define TDM_HAS_PROP(idx, prop)        DT_NODE_HAS_PROP(TDM(idx), prop)
+
+
+#define TDM_MEMORY_SECTION(idx)                                               \
+       COND_CODE_1(TDM_HAS_PROP(idx, memory_regions),                         \
+               (__attribute__((__section__(LINKER_DT_NODE_REGION_NAME(        \
+                       DT_PHANDLE(TDM(idx), memory_regions)))))),             \
+               ())
+
+#define BUFFER_MEM_REGION __attribute__((__section__("cpuapp_dma_region")))
+
+
+struct k_mem_slab rx_mem_slab;
+struct k_mem_slab tx_mem_slab;
+
+static char __aligned(32) my_rx_slab_buffer[BLOCK_SIZE * NUM_RX_BLOCKS] TDM_MEMORY_SECTION(130);
+static char __aligned(32) my_tx_slab_buffer[BLOCK_SIZE * NUM_TX_BLOCKS] TDM_MEMORY_SECTION(130);
+static char tx_block[BLOCK_SIZE] TDM_MEMORY_SECTION(130);
+static char rx_block[BLOCK_SIZE] TDM_MEMORY_SECTION(130);
+
+
 
 /* The data_l represent a sine wave */
 ZTEST_DMEM int16_t data_l[SAMPLE_NO] = {
@@ -28,6 +54,12 @@ ZTEST_DMEM int16_t data_r[SAMPLE_NO] = {
 	-32767, -30273, -23170, -12540,     -1,
 };
 
+void test_slab_init(void)
+{
+	k_mem_slab_init(&rx_mem_slab, my_rx_slab_buffer, BLOCK_SIZE, NUM_RX_BLOCKS);
+	k_mem_slab_init(&tx_mem_slab, my_tx_slab_buffer, BLOCK_SIZE, NUM_TX_BLOCKS);
+}
+
 static void fill_buf(int16_t *tx_block, int att)
 {
 	for (int i = 0; i < SAMPLE_NO; i++) {
@@ -35,9 +67,15 @@ static void fill_buf(int16_t *tx_block, int att)
 		tx_block[2 * i + 1] = data_r[i] >> att;
 	}
 }
-
+static uint32_t cnt = 0;
+static volatile bool wait = true;
 static int verify_buf(int16_t *rx_block, int att)
 {
+	cnt ++;
+	if(cnt > 1)
+	{
+
+	}
 	int sample_no = SAMPLE_NO;
 
 #if (CONFIG_I2S_TEST_ALLOWED_DATA_OFFSET > 0)
@@ -47,12 +85,13 @@ static int verify_buf(int16_t *rx_block, int att)
 		do {
 			++offset;
 			if (offset > CONFIG_I2S_TEST_ALLOWED_DATA_OFFSET) {
+				while(wait);
 				TC_PRINT("Allowed data offset exceeded\n");
 				return -TC_FAIL;
 			}
 		} while (rx_block[2 * offset] != data_l[0] >> att);
 
-		TC_PRINT("Using data offset: %d\n", offset);
+		//TC_PRINT("Using data offset: %d\n", offset);
 	}
 
 	rx_block += 2 * offset;
@@ -108,7 +147,7 @@ int verify_buf_const(int16_t *rx_block, int16_t val_l, int16_t val_r)
 static int tx_block_write_slab(const struct device *dev_i2s, int att, int err,
 			       struct k_mem_slab *slab)
 {
-	char tx_block[BLOCK_SIZE];
+	//char tx_block[BLOCK_SIZE];
 	int ret;
 
 	fill_buf((uint16_t *)tx_block, att);
@@ -130,7 +169,7 @@ int tx_block_write(const struct device *dev_i2s, int att, int err)
 static int rx_block_read_slab(const struct device *dev_i2s, int att,
 			      struct k_mem_slab *slab)
 {
-	char rx_block[BLOCK_SIZE];
+	//char rx_block[BLOCK_SIZE];
 	size_t rx_size;
 	int ret;
 

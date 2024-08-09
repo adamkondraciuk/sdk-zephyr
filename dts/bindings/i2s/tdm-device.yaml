@@ -1,16 +1,12 @@
 # Copyright (c) 2018, STMicroelectronics
 # SPDX-License-Identifier: Apache-2.0
 
-# Common fields for I2S controllers
+# Common fields for I2S devices
 
 include: base.yaml
 
-bus: tdm
+on-bus: tdm
 
 properties:
-  "#address-cells":
+  reg:
     required: true
-    const: 1
-  "#size-cells":
-    required: true
-    const: 0

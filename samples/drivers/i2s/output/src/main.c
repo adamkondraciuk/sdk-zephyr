@@ -58,6 +58,9 @@ static STRUCT_SECTION_ITERABLE(k_mem_slab, tx_0_mem_slab) =
 
 int main(void)
 {
+	//static bool volatile wait=true;
+	//while(wait);
+	printk("start\n");
 	void *tx_block[NUM_BLOCKS];
 	struct i2s_config i2s_cfg;
 	int ret;

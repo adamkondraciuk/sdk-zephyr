@@ -501,7 +501,8 @@ static void *test_i2s_speed_configure(void)
 {
 	/* Configure I2S TX transfer. */
 	int ret;
-
+	static volatile bool wait = true;
+	while(wait);
 	dev_i2s_tx = DEVICE_DT_GET_OR_NULL(I2S_DEV_NODE_TX);
 	zassert_not_null(dev_i2s_tx, "transfer device not found");
 	zassert(device_is_ready(dev_i2s_tx), "transfer device not ready");
