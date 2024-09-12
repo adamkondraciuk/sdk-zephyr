@@ -11,6 +11,9 @@
  */
 #include <zephyr/kernel.h>
 #include <cmsis_core.h>
+#include <hal/nrf_cache.h>
+#include <hal/nrf_memconf.h>
+#include <hal/nrf_lrcconf.h>
 
 #if defined(CONFIG_ARM_ON_EXIT_CPU_IDLE)
 #include <soc_cpu_idle.h>
@@ -35,6 +38,7 @@ void z_arm_cpu_idle_init(void)
 
 #if defined(CONFIG_ARM_ON_ENTER_CPU_IDLE_HOOK)
 #define SLEEP_IF_ALLOWED(wait_instr) do { \
+cccc
 	/* Skip the wait instr if on_enter_cpu_idle returns false */ \
 	if (z_arm_on_enter_cpu_idle()) { \
 		/* Wait for all memory transaction to complete */ \
@@ -45,11 +49,62 @@ void z_arm_cpu_idle_init(void)
 		ON_EXIT_IDLE_HOOK; \
 	} \
 } while (false)
+#elif IS_ENABLED(CONFIG_CACHE_DISABLE_WHEN_IDLE)
+#if IS_ENABLED(CONFIG_SOC_NRF54H20_CPURAD)
+#define SLEEP_IF_ALLOWED(wait_instr) do { \
+	NRF_DCACHE->TASKS_CLEANCACHE = 1; \
+	while (nrf_cache_busy_check(NRF_DCACHE)); \
+	nrf_cache_disable(NRF_DCACHE); \
+	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_MAIN, true); \
+	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_0, true); \
+	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_1, true); \
+	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_MAIN, false); \
+	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_0, false); \
+	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_1, false); \
+	nrf_memconf_ramblock_control_enable_set(NRF_MEMCONF, RAMBLOCK_POWER_ID, RAMBLOCK_CONTROL_BIT_DCACHE, false); \
+	nrf_cache_disable(NRF_ICACHE); \
+	nrf_memconf_ramblock_control_enable_set(NRF_MEMCONF, RAMBLOCK_POWER_ID, RAMBLOCK_CONTROL_BIT_ICACHE, false); \
+	__DSB(); \
+	wait_instr(); \
+	ON_EXIT_IDLE_HOOK; \
+	k_busy_wait(1000); \
+	nrf_memconf_ramblock_control_enable_set(NRF_MEMCONF, RAMBLOCK_POWER_ID, RAMBLOCK_CONTROL_BIT_DCACHE, true); \
+	nrf_memconf_ramblock_control_enable_set(NRF_MEMCONF, RAMBLOCK_POWER_ID, RAMBLOCK_CONTROL_BIT_ICACHE, true); \
+	nrf_cache_enable(NRF_ICACHE); \
+	nrf_cache_enable(NRF_DCACHE); \
+	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_MAIN, true); \
+	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_0, true); \
+	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_1, true); \
+	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_MAIN, false); \
+	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_0, false); \
+	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_1, false); \
+} while (false)
+#else
+#define SLEEP_IF_ALLOWED(wait_instr) do { \
+	NRF_DCACHE->TASKS_CLEANCACHE = 1; \
+	while (nrf_cache_busy_check(NRF_DCACHE)); \
+	nrf_cache_disable(NRF_DCACHE); \
+	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_MAIN, false); \
+	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_MAIN, true); \
+	nrf_memconf_ramblock_control_enable_set(NRF_MEMCONF, RAMBLOCK_POWER_ID, RAMBLOCK_CONTROL_BIT_DCACHE, false); \
+	nrf_cache_disable(NRF_ICACHE); \
+	nrf_memconf_ramblock_control_enable_set(NRF_MEMCONF, RAMBLOCK_POWER_ID, RAMBLOCK_CONTROL_BIT_ICACHE, false); \
+	__DSB(); \
+	wait_instr(); \
+	ON_EXIT_IDLE_HOOK; \
+	k_busy_wait(1000); \
+	nrf_memconf_ramblock_control_enable_set(NRF_MEMCONF, RAMBLOCK_POWER_ID, RAMBLOCK_CONTROL_BIT_DCACHE, true); \
+	nrf_memconf_ramblock_control_enable_set(NRF_MEMCONF, RAMBLOCK_POWER_ID, RAMBLOCK_CONTROL_BIT_ICACHE, true); \
+	nrf_cache_enable(NRF_ICACHE); \
+	nrf_cache_enable(NRF_DCACHE); \
+} while (false)
+#endif
 #else
 #define SLEEP_IF_ALLOWED(wait_instr) do { \
 	__DSB(); \
 	wait_instr(); \
 	ON_EXIT_IDLE_HOOK; \
+	k_busy_wait(1000); \
 } while (false)
 #endif
 

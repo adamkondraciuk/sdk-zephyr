@@ -50,7 +50,7 @@ static void power_domain_init(void)
 	 *  This is done here at boot so that when the idle routine will hit
 	 *  WFI the power domain will be correctly retained.
 	 */
-
+#if !IS_ENABLED(CONFIG_CACHE_DISABLE_WHEN_IDLE)
 	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_0,
 			!IS_ENABLED(CONFIG_SOC_NRF54H20_CPURAD));
 	nrf_lrcconf_poweron_force_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_MAIN,
@@ -58,6 +58,7 @@ static void power_domain_init(void)
 
 	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_MAIN, true);
 	nrf_lrcconf_retain_set(NRF_LRCCONF010, NRF_LRCCONF_POWER_DOMAIN_0, true);
+#endif
 	nrf_memconf_ramblock_ret_enable_set(NRF_MEMCONF, 0, RAMBLOCK_RET_BIT_ICACHE, false);
 	nrf_memconf_ramblock_ret_enable_set(NRF_MEMCONF, 0, RAMBLOCK_RET_BIT_DCACHE, false);
 	nrf_memconf_ramblock_ret_enable_set(NRF_MEMCONF, 1, RAMBLOCK_RET_BIT_ICACHE, false);

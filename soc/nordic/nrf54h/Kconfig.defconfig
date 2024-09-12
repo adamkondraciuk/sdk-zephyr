@@ -39,4 +39,10 @@ config SPI_DW_HSSI
 config SPI_DW_ACCESS_WORD_ONLY
 	default y if SPI_DW
 
+config CACHE_DISABLE_WHEN_IDLE
+	bool "Disable cache when idling"
+	default n
+	help
+	  Disables the DCACHE and ICACHE during idle state.
+
 endif # SOC_SERIES_NRF54HX
