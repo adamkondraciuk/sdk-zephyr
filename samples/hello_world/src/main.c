@@ -5,10 +5,15 @@
  */
 
 #include <stdio.h>
+#include <zephyr/drivers/timer/nrf_grtc_timer.h>
+#include <zephyr/kernel.h>
+
 
 int main(void)
 {
-	printf("Hello World! %s\n", CONFIG_BOARD_TARGET);
-
+	while(1) {
+		printf("Hello World! %s %llu\n", CONFIG_BOARD_TARGET, z_nrf_grtc_timer_read());
+		k_msleep(1000);
+	}
 	return 0;
 }

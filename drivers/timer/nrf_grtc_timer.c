@@ -365,7 +365,7 @@ int z_nrf_grtc_timer_capture_read(int32_t chan, uint64_t *captured_time)
 	return 0;
 }
 
-#if defined(CONFIG_NRF_GRTC_SLEEP_ALLOWED) && defined(CONFIG_NRF_GRTC_START_SYSCOUNTER)
+#if defined(CONFIG_POWEROFF) && defined(CONFIG_NRF_GRTC_START_SYSCOUNTER)
 int z_nrf_grtc_wakeup_prepare(uint64_t wake_time_us)
 {
 	nrfx_err_t err_code;
@@ -429,7 +429,7 @@ int z_nrf_grtc_wakeup_prepare(uint64_t wake_time_us)
 	k_spin_unlock(&lock, key);
 	return 0;
 }
-#endif /* CONFIG_NRF_GRTC_SLEEP_ALLOWED */
+#endif /* CONFIG_POWEROFF */
 
 uint32_t sys_clock_cycle_get_32(void)
 {
@@ -510,6 +510,9 @@ static int sys_clock_driver_init(void)
 	nrfx_grtc_clock_source_set(NRF_GRTC_CLKSEL_LFXO);
 #endif
 
+#if IS_ENABLED(CONFIG_NRF_GRTC_ALWAYS_ON)
+	nrfx_grtc_active_request_set(true);
+#endif
 	return 0;
 }
 
