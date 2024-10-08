@@ -20,22 +20,6 @@ __noinit _cpu_context_t _cpu_context;
 /**
  * S2RAM Marker
  */
-static __noinit uint32_t marker;
-
-void pm_s2ram_mark_set(void)
-{
-	marker = MAGIC;
-}
-
-bool pm_s2ram_mark_check_and_clear(void)
-{
-	if (marker == MAGIC) {
-		marker = 0;
-
-		return true;
-	}
-
-	return false;
-}
+__noinit uint32_t marker;
 
 #endif /* CONFIG_PM_S2RAM_CUSTOM_MARKING */

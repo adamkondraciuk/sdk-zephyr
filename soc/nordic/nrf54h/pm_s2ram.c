@@ -12,6 +12,8 @@
 
 #include <cmsis_core.h>
 
+const uint32_t nrf_resetinfo_base = (uint32_t)((uint32_t*)NRF_RESETINFO);
+
 #define NVIC_MEMBER_SIZE(member) ARRAY_SIZE(((NVIC_Type *)0)->member)
 
 /* Currently dynamic regions are only used in case of userspace or stack guard and
@@ -125,27 +127,4 @@ int soc_s2ram_suspend(pm_s2ram_system_off_fn_t system_off)
 	__enable_irq();
 
 	return ret;
-}
-
-void pm_s2ram_mark_set(void)
-{
-	/* empty */
-}
-
-bool pm_s2ram_mark_check_and_clear(void)
-{
-	bool unretained_wake;
-	bool restore_valid;
-	uint32_t reset_reason = nrf_resetinfo_resetreas_local_get(NRF_RESETINFO);
-
-	if (reset_reason != NRF_RESETINFO_RESETREAS_LOCAL_UNRETAINED_MASK) {
-		return false;
-	}
-	unretained_wake = reset_reason & NRF_RESETINFO_RESETREAS_LOCAL_UNRETAINED_MASK;
-	nrf_resetinfo_resetreas_local_set(NRF_RESETINFO, 0);
-
-	restore_valid = nrf_resetinfo_restore_valid_check(NRF_RESETINFO);
-	nrf_resetinfo_restore_valid_set(NRF_RESETINFO, false);
-
-	return (unretained_wake & restore_valid) ? true : false;
 }
