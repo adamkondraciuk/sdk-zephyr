@@ -5,7 +5,7 @@
  */
 
 /* i2s-node0 is the transmitter/receiver */
-
+//brakuje RX?
 / {
 	aliases {
 		i2s-tx = &tdm130;

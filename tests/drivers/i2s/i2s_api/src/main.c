@@ -50,6 +50,8 @@ static void before(void *fixture)
 
 static void before_dir_both(void *fixture)
 {
+//	static volatile bool wait = true;
+//	while(wait);
 	ARG_UNUSED(fixture);
 
 	int ret;

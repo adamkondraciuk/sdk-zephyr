@@ -345,7 +345,7 @@ int pinctrl_configure_pins(const pinctrl_soc_pin_t *pins, uint8_t pin_cnt,
 			input = NRF_GPIO_PIN_INPUT_DISCONNECT;
 #if NRF_GPIO_HAS_CLOCKPIN //&& defined(NRF_TDM_CLOCKPIN_SCK_NEEDED)
 #warning how to get the symbol?
-			clockpin = true;
+			//clockpin = true;
 #endif
 			break;
 		case NRF_FUN_TDM_SCK_S:
@@ -359,7 +359,7 @@ int pinctrl_configure_pins(const pinctrl_soc_pin_t *pins, uint8_t pin_cnt,
 			dir = NRF_GPIO_PIN_DIR_OUTPUT;
 			input = NRF_GPIO_PIN_INPUT_DISCONNECT;
 #if NRF_GPIO_HAS_CLOCKPIN && defined(NRF_TDM_CLOCKPIN_FSYNC_NEEDED)
-			clockpin = true;
+			//clockpin = true;
 #endif
 			break;
 		case NRF_FUN_TDM_FSYNC_S:
@@ -384,7 +384,7 @@ int pinctrl_configure_pins(const pinctrl_soc_pin_t *pins, uint8_t pin_cnt,
 			dir = NRF_GPIO_PIN_DIR_OUTPUT;
 			input = NRF_GPIO_PIN_INPUT_DISCONNECT;
 #if NRF_GPIO_HAS_CLOCKPIN && defined(NRF_TDM_CLOCKPIN_MCK_NEEDED)
-			clockpin = true;
+			//clockpin = true;
 #endif
 			break;
 #endif /* defined(NRF_PSEL_TDM) */

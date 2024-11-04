@@ -76,17 +76,17 @@ CTRLSEL = 7
 CTRLSEL = 7
 
 [gpio_instance_1]
-ADDRESS = 0x5f938400
+ADDRESS = 0x5f938200
 
 [gpio_own_1]
 PIN_0 = "NotOwn"
 PIN_1 = "NotOwn"
 PIN_2 = "NotOwn"
-PIN_3 = "NotOwn"
+PIN_3 = "Own"
 PIN_4 = "Own"
 PIN_5 = "Own"
 PIN_6 = "Own"
-PIN_7 = "Own"
+PIN_7 = "NotOwn"
 PIN_8 = "NotOwn"
 PIN_9 = "NotOwn"
 PIN_10 = "NotOwn"
@@ -153,16 +153,16 @@ CTRLSEL = 7
 CTRLSEL = 7
 
 [gpio_instance_2]
-ADDRESS = 0x5f938c00
+ADDRESS = 0x5f938400
 
 [gpio_own_2]
-PIN_0 = "Own"
+PIN_0 = "NotOwn"
 PIN_1 = "NotOwn"
 PIN_2 = "NotOwn"
-PIN_3 = "Own"
-PIN_4 = "NotOwn"
+PIN_3 = "NotOwn"
+PIN_4 = "Own"
 PIN_5 = "Own"
-PIN_6 = "NotOwn"
+PIN_6 = "Own"
 PIN_7 = "Own"
 PIN_8 = "NotOwn"
 PIN_9 = "NotOwn"
@@ -188,7 +188,7 @@ PIN_12 = "Secure"
 PIN_13 = "Secure"
 
 [gpio_pin_ctrlsel_28]
-CTRLSEL = 4
+CTRLSEL = 7
 
 [gpio_pin_ctrlsel_29]
 CTRLSEL = 7
@@ -197,19 +197,19 @@ CTRLSEL = 7
 CTRLSEL = 7
 
 [gpio_pin_ctrlsel_31]
-CTRLSEL = 0
+CTRLSEL = 7
 
 [gpio_pin_ctrlsel_32]
 CTRLSEL = 7
 
 [gpio_pin_ctrlsel_33]
-CTRLSEL = 4
+CTRLSEL = 7
 
 [gpio_pin_ctrlsel_34]
 CTRLSEL = 7
 
 [gpio_pin_ctrlsel_35]
-CTRLSEL = 4
+CTRLSEL = 7
 
 [gpio_pin_ctrlsel_36]
 CTRLSEL = 7
@@ -230,17 +230,17 @@ CTRLSEL = 7
 CTRLSEL = 7
 
 [gpio_instance_3]
-ADDRESS = 0x5f939200
+ADDRESS = 0x5f938c00
 
 [gpio_own_3]
 PIN_0 = "Own"
-PIN_1 = "Own"
-PIN_2 = "Own"
+PIN_1 = "NotOwn"
+PIN_2 = "NotOwn"
 PIN_3 = "Own"
-PIN_4 = "Own"
+PIN_4 = "NotOwn"
 PIN_5 = "Own"
 PIN_6 = "NotOwn"
-PIN_7 = "NotOwn"
+PIN_7 = "Own"
 PIN_8 = "NotOwn"
 PIN_9 = "NotOwn"
 PIN_10 = "NotOwn"
@@ -265,28 +265,28 @@ PIN_12 = "Secure"
 PIN_13 = "Secure"
 
 [gpio_pin_ctrlsel_42]
-CTRLSEL = 7
+CTRLSEL = 4
 
 [gpio_pin_ctrlsel_43]
 CTRLSEL = 7
 
 [gpio_pin_ctrlsel_44]
-CTRLSEL = 2
-
-[gpio_pin_ctrlsel_45]
 CTRLSEL = 7
 
+[gpio_pin_ctrlsel_45]
+CTRLSEL = 0
+
 [gpio_pin_ctrlsel_46]
-CTRLSEL = 6
+CTRLSEL = 7
 
 [gpio_pin_ctrlsel_47]
-CTRLSEL = 6
+CTRLSEL = 4
 
 [gpio_pin_ctrlsel_48]
 CTRLSEL = 7
 
 [gpio_pin_ctrlsel_49]
-CTRLSEL = 7
+CTRLSEL = 4
 
 [gpio_pin_ctrlsel_50]
 CTRLSEL = 7
@@ -307,15 +307,15 @@ CTRLSEL = 7
 CTRLSEL = 7
 
 [gpio_instance_4]
-ADDRESS = 0xffffffff
+ADDRESS = 0x5f939200
 
 [gpio_own_4]
-PIN_0 = "NotOwn"
-PIN_1 = "NotOwn"
-PIN_2 = "NotOwn"
-PIN_3 = "NotOwn"
-PIN_4 = "NotOwn"
-PIN_5 = "NotOwn"
+PIN_0 = "Own"
+PIN_1 = "Own"
+PIN_2 = "Own"
+PIN_3 = "Own"
+PIN_4 = "Own"
+PIN_5 = "Own"
 PIN_6 = "NotOwn"
 PIN_7 = "NotOwn"
 PIN_8 = "NotOwn"
@@ -348,16 +348,16 @@ CTRLSEL = 7
 CTRLSEL = 7
 
 [gpio_pin_ctrlsel_58]
-CTRLSEL = 7
+CTRLSEL = 2
 
 [gpio_pin_ctrlsel_59]
 CTRLSEL = 7
 
 [gpio_pin_ctrlsel_60]
-CTRLSEL = 7
+CTRLSEL = 6
 
 [gpio_pin_ctrlsel_61]
-CTRLSEL = 7
+CTRLSEL = 6
 
 [gpio_pin_ctrlsel_62]
 CTRLSEL = 7
@@ -790,7 +790,7 @@ OWNERID = 2
 ADDRESS = 0x0e100000
 
 [mem_size_1]
-SIZE = 0xe5000
+SIZE = 0xe9000
 
 [mem_config_2]
 READ = "Allowed"
@@ -808,10 +808,10 @@ SIZE = 0x41000
 READ = "Allowed"
 WRITE = "Allowed"
 EXECUTE = "NotAllowed"
-SECURE = "NonSecure"
+SECURE = "Secure"
 NSC = "Disabled"
 OWNERID = 2
-ADDRESS = 0x2f0bf000
+ADDRESS = 0x2f0be000
 
 [mem_size_3]
 SIZE = 0x1000
@@ -838,7 +838,7 @@ OWNERID = 2
 ADDRESS = 0x2fc12000
 
 [mem_size_5]
-SIZE = 0x2000
+SIZE = 0x1000
 
 [mem_config_6]
 READ = "NotAllowed"
@@ -994,19 +994,19 @@ ADDRESS = 0x5f982000
 SECURE = "Secure"
 DMASEC = "Secure"
 PROCESSOR = 2
-ADDRESS = 0x5f9a4000
+ADDRESS = 0x5f992000
 
 [periph_config_6]
 SECURE = "Secure"
 DMASEC = "Secure"
 PROCESSOR = 2
-ADDRESS = 0x5f9d5000
+ADDRESS = 0x5f9a4000
 
 [periph_config_7]
 SECURE = "Secure"
 DMASEC = "Secure"
-PROCESSOR = 15
-ADDRESS = 0xfffff000
+PROCESSOR = 2
+ADDRESS = 0x5f9d5000
 
 [periph_config_8]
 SECURE = "Secure"

@@ -15,6 +15,11 @@
 #include <zephyr/irq.h>
 LOG_MODULE_REGISTER(i2s_nrfx, CONFIG_I2S_LOG_LEVEL);
 
+void logme(const char *fmt, ...)
+{
+
+}
+
 struct stream_cfg {
 	struct i2s_config cfg;
 	nrfx_i2s_config_t nrfx_cfg;
@@ -232,6 +237,7 @@ static void free_rx_buffer(struct i2s_nrfx_drv_data *drv_data, void *buffer)
 static bool supply_next_buffers(struct i2s_nrfx_drv_data *drv_data,
 				nrfx_i2s_buffers_t *next)
 {
+	printk("N:\n");
 	if (drv_data->active_dir != I2S_DIR_TX) { /* -> RX active */
 		if (!get_next_rx_buffer(drv_data, next)) {
 			drv_data->state = I2S_STATE_ERROR;
@@ -251,18 +257,21 @@ static bool supply_next_buffers(struct i2s_nrfx_drv_data *drv_data,
 
 	LOG_DBG("Next buffers: %p/%p", next->p_tx_buffer, next->p_rx_buffer);
 	nrfx_i2s_next_buffers_set(drv_data->p_i2s, next);
+	printk("N*\n");
 	return true;
 }
 
 static void data_handler(const struct device *dev,
 			 const nrfx_i2s_buffers_t *released, uint32_t status)
 {
+	printk("D:\n");
 	struct i2s_nrfx_drv_data *drv_data = dev->data;
 	bool stop_transfer = false;
 
 	if (status & NRFX_I2S_STATUS_TRANSFER_STOPPED) {
 		if (drv_data->state == I2S_STATE_STOPPING) {
 			drv_data->state = I2S_STATE_READY;
+			printk("s\n");
 		}
 		if (drv_data->last_tx_buffer) {
 			/* Usually, these pointers are equal, i.e. the last TX
@@ -276,7 +285,9 @@ static void data_handler(const struct device *dev,
 			 * fails. In such case, the last TX buffer needs to be
 			 * freed here.
 			 */
+			printk("l\n");
 			if (drv_data->last_tx_buffer != released->p_tx_buffer) {
+				printk("f\n");
 				free_tx_buffer(drv_data,
 					       drv_data->last_tx_buffer);
 			}
@@ -289,6 +300,7 @@ static void data_handler(const struct device *dev,
 	}
 
 	if (released == NULL) {
+		printk("nr\n");
 		/* This means that buffers for the next part of the transfer
 		 * were not supplied and the previous ones cannot be released
 		 * yet, as pointers to them were latched in the I2S registers.
@@ -296,7 +308,7 @@ static void data_handler(const struct device *dev,
 		 * buffers will be released after the transfer actually stops).
 		 */
 		if (drv_data->state != I2S_STATE_STOPPING) {
-			LOG_ERR("Next buffers not supplied on time");
+			printk("!\n");
 			drv_data->state = I2S_STATE_ERROR;
 		}
 		nrfx_i2s_stop(drv_data->p_i2s);
@@ -304,6 +316,7 @@ static void data_handler(const struct device *dev,
 	}
 
 	if (released->p_rx_buffer) {
+		printk("rr\n");
 		if (drv_data->discard_rx) {
 			free_rx_buffer(drv_data, released->p_rx_buffer);
 		} else {
@@ -315,13 +328,13 @@ static void data_handler(const struct device *dev,
 					     &buf,
 					     K_NO_WAIT);
 			if (ret < 0) {
-				LOG_ERR("No room in RX queue");
+				printk("No room in RX queue");
 				drv_data->state = I2S_STATE_ERROR;
 				stop_transfer = true;
 
 				free_rx_buffer(drv_data, released->p_rx_buffer);
 			} else {
-				LOG_DBG("Queued RX %p", released->p_rx_buffer);
+				printk("qr %p\n", released->p_rx_buffer);
 
 				/* If the TX direction is not active and
 				 * the transfer should be stopped after
@@ -337,6 +350,7 @@ static void data_handler(const struct device *dev,
 	}
 
 	if (released->p_tx_buffer) {
+		printk("rt\n");
 		/* If the last buffer that was to be transferred has just been
 		 * released, it is time to stop the transfer.
 		 */
@@ -349,12 +363,14 @@ static void data_handler(const struct device *dev,
 	}
 
 	if (stop_transfer) {
+		printk("ss\n");
 		nrfx_i2s_stop(drv_data->p_i2s);
 	} else if (status & NRFX_I2S_STATUS_NEXT_BUFFERS_NEEDED) {
 		nrfx_i2s_buffers_t next = { 0 };
-
+		printk("n\n");
 		if (drv_data->active_dir != I2S_DIR_RX) { /* -> TX active */
 			if (drv_data->stop) {
+				printk("d1\n");
 				/* If the stream is to be stopped, don't get
 				 * the next TX buffer from the queue, instead
 				 * supply the one used last time (it won't be
@@ -364,10 +380,12 @@ static void data_handler(const struct device *dev,
 				next.p_tx_buffer = drv_data->last_tx_buffer;
 				next.buffer_size = 1;
 			} else if (get_next_tx_buffer(drv_data, &next)) {
+				printk("d2\n");
 				/* Next TX buffer successfully retrieved from
 				 * the queue, nothing more to do here.
 				 */
 			} else if (drv_data->state == I2S_STATE_STOPPING) {
+				printk("d3\n");
 				/* If there are no more TX blocks queued and
 				 * the current state is STOPPING (so the DRAIN
 				 * command was triggered) it is time to finish
@@ -381,6 +399,7 @@ static void data_handler(const struct device *dev,
 				next.p_tx_buffer = drv_data->last_tx_buffer;
 				next.buffer_size = 1;
 			} else {
+				printk("d4\n");
 				/* Next TX buffer cannot be supplied now.
 				 * Defer it to when the user writes more data.
 				 */
@@ -391,6 +410,7 @@ static void data_handler(const struct device *dev,
 
 		(void)supply_next_buffers(drv_data, &next);
 	}
+	printk("D*\n");
 }
 
 static void purge_queue(const struct device *dev, enum i2s_dir dir)
@@ -418,22 +438,26 @@ static void purge_queue(const struct device *dev, enum i2s_dir dir)
 static int i2s_nrfx_configure(const struct device *dev, enum i2s_dir dir,
 			      const struct i2s_config *i2s_cfg)
 {
+	printk("CNF:\n");
 	struct i2s_nrfx_drv_data *drv_data = dev->data;
 	const struct i2s_nrfx_drv_cfg *drv_cfg = dev->config;
 	nrfx_i2s_config_t nrfx_cfg;
 
 	if (drv_data->state != I2S_STATE_READY) {
-		LOG_ERR("Cannot configure in state: %d", drv_data->state);
+		printk("Cannot configure in state: %d", drv_data->state);
 		return -EINVAL;
 	}
 
 	if (i2s_cfg->frame_clk_freq == 0) { /* -> reset state */
+		printk("r\n");
 		purge_queue(dev, dir);
 		if (dir == I2S_DIR_TX || dir == I2S_DIR_BOTH) {
+			printk("r1\n");
 			drv_data->tx_configured = false;
 			memset(&drv_data->tx, 0, sizeof(drv_data->tx));
 		}
 		if (dir == I2S_DIR_RX || dir == I2S_DIR_BOTH) {
+			printk("r2\n");
 			drv_data->rx_configured = false;
 			memset(&drv_data->rx, 0, sizeof(drv_data->rx));
 		}
@@ -444,7 +468,7 @@ static int i2s_nrfx_configure(const struct device *dev, enum i2s_dir dir,
 			i2s_cfg->block_size != 0);
 
 	if ((i2s_cfg->block_size % sizeof(uint32_t)) != 0) {
-		LOG_ERR("This device can transfer only full 32-bit words");
+		printk("This device can transfer only full 32-bit words");
 		return -EINVAL;
 	}
 
@@ -466,7 +490,7 @@ static int i2s_nrfx_configure(const struct device *dev, enum i2s_dir dir,
 		break;
 #endif
 	default:
-		LOG_ERR("Unsupported word size: %u", i2s_cfg->word_size);
+		printk("Unsupported word size: %u", i2s_cfg->word_size);
 		return -EINVAL;
 	}
 
@@ -484,14 +508,14 @@ static int i2s_nrfx_configure(const struct device *dev, enum i2s_dir dir,
 		nrfx_cfg.format = NRF_I2S_FORMAT_ALIGNED;
 		break;
 	default:
-		LOG_ERR("Unsupported data format: 0x%02x", i2s_cfg->format);
+		printk("Unsupported data format: 0x%02x", i2s_cfg->format);
 		return -EINVAL;
 	}
 
 	if ((i2s_cfg->format & I2S_FMT_DATA_ORDER_LSB) ||
 	    (i2s_cfg->format & I2S_FMT_BIT_CLK_INV) ||
 	    (i2s_cfg->format & I2S_FMT_FRAME_CLK_INV)) {
-		LOG_ERR("Unsupported stream format: 0x%02x", i2s_cfg->format);
+		printk("Unsupported stream format: 0x%02x", i2s_cfg->format);
 		return -EINVAL;
 	}
 
@@ -500,7 +524,7 @@ static int i2s_nrfx_configure(const struct device *dev, enum i2s_dir dir,
 	} else if (i2s_cfg->channels == 1) {
 		nrfx_cfg.channels = NRF_I2S_CHANNELS_LEFT;
 	} else {
-		LOG_ERR("Unsupported number of channels: %u",
+		printk("Unsupported number of channels: %u",
 			i2s_cfg->channels);
 		return -EINVAL;
 	}
@@ -512,7 +536,7 @@ static int i2s_nrfx_configure(const struct device *dev, enum i2s_dir dir,
 		   !(i2s_cfg->options & I2S_OPT_FRAME_CLK_SLAVE)) {
 		nrfx_cfg.mode = NRF_I2S_MODE_MASTER;
 	} else {
-		LOG_ERR("Unsupported operation mode: 0x%02x", i2s_cfg->options);
+		printk("Unsupported operation mode: 0x%02x", i2s_cfg->options);
 		return -EINVAL;
 	}
 
@@ -536,22 +560,24 @@ static int i2s_nrfx_configure(const struct device *dev, enum i2s_dir dir,
 
 	if ((i2s_cfg->options & I2S_OPT_LOOPBACK) ||
 	    (i2s_cfg->options & I2S_OPT_PINGPONG)) {
-		LOG_ERR("Unsupported options: 0x%02x", i2s_cfg->options);
+		printk("Unsupported options: 0x%02x", i2s_cfg->options);
 		return -EINVAL;
 	}
 
 	if (dir == I2S_DIR_TX || dir == I2S_DIR_BOTH) {
+		printk("tx\n");
 		drv_data->tx.cfg = *i2s_cfg;
 		drv_data->tx.nrfx_cfg = nrfx_cfg;
 		drv_data->tx_configured = true;
 	}
 
 	if (dir == I2S_DIR_RX || dir == I2S_DIR_BOTH) {
+		printk("rx\n");
 		drv_data->rx.cfg = *i2s_cfg;
 		drv_data->rx.nrfx_cfg = nrfx_cfg;
 		drv_data->rx_configured = true;
 	}
-
+	printk("CNF*\n");
 	return 0;
 }
 
@@ -576,9 +602,10 @@ static int i2s_nrfx_read(const struct device *dev,
 	struct i2s_nrfx_drv_data *drv_data = dev->data;
 	struct i2s_buf buf;
 	int ret;
+	printk("R:\n");
 
 	if (!drv_data->rx_configured) {
-		LOG_ERR("Device is not configured");
+		printk("Device is not configured");
 		return -EIO;
 	}
 
@@ -597,7 +624,7 @@ static int i2s_nrfx_read(const struct device *dev,
 		*mem_block = buf.mem_block;
 		*size = buf.size;
 	}
-
+	printk("R* %d\n", ret);
 	return ret;
 }
 
@@ -607,20 +634,21 @@ static int i2s_nrfx_write(const struct device *dev,
 	struct i2s_nrfx_drv_data *drv_data = dev->data;
 	struct i2s_buf buf = { .mem_block = mem_block, .size = size };
 	int ret;
+	printk("W:\n");
 
 	if (!drv_data->tx_configured) {
-		LOG_ERR("Device is not configured");
+		printk("Device is not configured");
 		return -EIO;
 	}
 
 	if (drv_data->state != I2S_STATE_RUNNING &&
 	    drv_data->state != I2S_STATE_READY) {
-		LOG_ERR("Cannot write in state: %d", drv_data->state);
+		printk("Cannot write in state: %d", drv_data->state);
 		return -EIO;
 	}
 
 	if (size > drv_data->tx.cfg.block_size || size < sizeof(uint32_t)) {
-		LOG_ERR("This device can only write blocks up to %u bytes",
+		printk("This device can only write blocks up to %u bytes",
 			drv_data->tx.cfg.block_size);
 		return -EIO;
 	}
@@ -632,7 +660,7 @@ static int i2s_nrfx_write(const struct device *dev,
 		return ret;
 	}
 
-	LOG_DBG("Queued TX %p", mem_block);
+	printk("qt %p\n", mem_block);
 
 	/* Check if interrupt wanted to get next TX buffer before current buffer
 	 * was queued. Do not move this check before queuing because doing so
@@ -642,13 +670,13 @@ static int i2s_nrfx_write(const struct device *dev,
 	if (drv_data->state == I2S_STATE_RUNNING &&
 	    drv_data->next_tx_buffer_needed) {
 		nrfx_i2s_buffers_t next = { 0 };
-
+		printk("n\n");
 		if (!get_next_tx_buffer(drv_data, &next)) {
 			/* Log error because this is definitely unexpected.
 			 * Do not return error because the caller is no longer
 			 * responsible for releasing the buffer.
 			 */
-			LOG_ERR("Cannot reacquire queued buffer");
+			printk("Cannot reacquire queued buffer");
 			return 0;
 		}
 
@@ -657,22 +685,24 @@ static int i2s_nrfx_write(const struct device *dev,
 		LOG_DBG("Next TX %p", next.p_tx_buffer);
 
 		if (!supply_next_buffers(drv_data, &next)) {
+			printk("Cannot supply buffer\n");
 			return -EIO;
 		}
 
 	}
-
+	printk("W*\n");
 	return 0;
 }
 
 static int start_transfer(struct i2s_nrfx_drv_data *drv_data)
 {
+	printk("S\n");
 	nrfx_i2s_buffers_t initial_buffers = { 0 };
 	int ret;
 
 	if (drv_data->active_dir != I2S_DIR_RX && /* -> TX to be started */
 	    !get_next_tx_buffer(drv_data, &initial_buffers)) {
-		LOG_ERR("No TX buffer available");
+		printk("No TX buffer available");
 		ret = -ENOMEM;
 	} else if (drv_data->active_dir != I2S_DIR_TX && /* -> RX to be started */
 		   !get_next_rx_buffer(drv_data, &initial_buffers)) {
@@ -714,6 +744,7 @@ static int start_transfer(struct i2s_nrfx_drv_data *drv_data)
 	}
 
 	drv_data->state = I2S_STATE_ERROR;
+	printk("S*\n");
 	return ret;
 }
 
@@ -792,6 +823,7 @@ static int i2s_nrfx_trigger(const struct device *dev,
 	struct i2s_nrfx_drv_data *drv_data = dev->data;
 	bool configured = false;
 	bool cmd_allowed;
+	printk("TRG:\n");
 
 	/* This driver does not use the I2S_STATE_NOT_READY value.
 	 * Instead, if a given stream is not configured, the respective
@@ -806,7 +838,7 @@ static int i2s_nrfx_trigger(const struct device *dev,
 	}
 
 	if (!configured) {
-		LOG_ERR("Device is not configured");
+		printk("Device is not configured");
 		return -EIO;
 	}
 
@@ -816,7 +848,7 @@ static int i2s_nrfx_trigger(const struct device *dev,
 		    sizeof(drv_data->rx.nrfx_cfg)) != 0
 	     ||
 	     (drv_data->tx.cfg.block_size != drv_data->rx.cfg.block_size))) {
-		LOG_ERR("TX and RX configurations are different");
+		printk("TX and RX configurations are different");
 		return -EIO;
 	}
 
@@ -835,11 +867,12 @@ static int i2s_nrfx_trigger(const struct device *dev,
 		cmd_allowed = (drv_data->state == I2S_STATE_ERROR);
 		break;
 	default:
-		LOG_ERR("Invalid trigger: %d", cmd);
+		printk("Invalid trigger: %d", cmd);
 		return -EINVAL;
 	}
 
 	if (!cmd_allowed) {
+		printk("Not allowed\n");
 		return -EIO;
 	}
 
@@ -850,13 +883,14 @@ static int i2s_nrfx_trigger(const struct device *dev,
 	 */
 	if (drv_data->state == I2S_STATE_RUNNING &&
 	    drv_data->active_dir != dir) {
-		LOG_ERR("Inappropriate trigger (%d/%d), active stream(s): %d",
+		printk("Inappropriate trigger (%d/%d), active stream(s): %d",
 			cmd, dir, drv_data->active_dir);
 		return -EINVAL;
 	}
 
 	switch (cmd) {
 	case I2S_TRIGGER_START:
+		printk(" start\n");
 		drv_data->stop = false;
 		drv_data->discard_rx = false;
 		drv_data->active_dir = dir;
@@ -864,17 +898,20 @@ static int i2s_nrfx_trigger(const struct device *dev,
 		return trigger_start(dev);
 
 	case I2S_TRIGGER_STOP:
+		printk(" stop\n");
 		drv_data->state = I2S_STATE_STOPPING;
 		drv_data->stop = true;
 		return 0;
 
 	case I2S_TRIGGER_DRAIN:
+		printk(" drain\n");
 		drv_data->state = I2S_STATE_STOPPING;
 		/* If only RX is active, DRAIN is equivalent to STOP. */
 		drv_data->stop = (drv_data->active_dir == I2S_DIR_RX);
 		return 0;
 
 	case I2S_TRIGGER_DROP:
+		printk(" drop\n");
 		if (drv_data->state != I2S_STATE_READY) {
 			drv_data->discard_rx = true;
 			nrfx_i2s_stop(drv_data->p_i2s);
@@ -884,14 +921,16 @@ static int i2s_nrfx_trigger(const struct device *dev,
 		return 0;
 
 	case I2S_TRIGGER_PREPARE:
+	printk(" prepare\n");
 		purge_queue(dev, dir);
 		drv_data->state = I2S_STATE_READY;
 		return 0;
 
 	default:
-		LOG_ERR("Invalid trigger: %d", cmd);
+		printk("Invalid trigger: %d", cmd);
 		return -EINVAL;
 	}
+	printk("TRG*\n");
 }
 
 static void init_clock_manager(const struct device *dev)

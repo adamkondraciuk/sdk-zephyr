@@ -8,7 +8,7 @@
 
 / {
 	aliases {
-		i2s-node0 = &tdm130;
+		i2s-tx = &tdm130;
 	};
 };
 
@@ -21,16 +21,10 @@
 				<NRF_PSEL(TDM_SDIN, 1, 5)>;
 		};
 	};
-};
+};	
 
 &tdm130 {
 	status = "okay";
 	pinctrl-0 = <&tdm130_default_alt>;
 	pinctrl-names = "default";
-	memory-regions = <&cpuapp_dma_region>;
 };
-
-&cpuapp_dma_region {
-    status = "okay";
-};
-
