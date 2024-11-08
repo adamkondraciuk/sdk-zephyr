@@ -19,7 +19,7 @@ _ASM_FILE_PROLOGUE
 GTEXT(pm_s2ram_mark_set)
 GTEXT(pm_s2ram_mark_check_and_clear)
 GDATA(_cpu_context)
-GDATA(_)
+GDATA(_cpu_link_reg)
 
 SECTION_FUNC(TEXT, arch_pm_s2ram_suspend)
 	/*
@@ -71,7 +71,9 @@ SECTION_FUNC(TEXT, arch_pm_s2ram_suspend)
 	/*
 	 * Mark entering suspend to RAM.
 	 */
+	push    {r0,r4}
 	bl 	pm_s2ram_mark_set
+	pop     {r0,r4}
 
 	/*
 	 * Call the system_off function passed as parameter. This should never
@@ -84,15 +86,17 @@ SECTION_FUNC(TEXT, arch_pm_s2ram_suspend)
 	 * not successful (in r0 the return value).
 	 */
 
-	/* Move system_off back to r0 as return value */
-	mov	r0, r4
+
 
 	/*
 	 * Reset the marking of suspend to RAM, return is ignored.
 	 */
-	push    {r0-r1}
+	push    {r0,r4}
 	bl	pm_s2ram_mark_check_and_clear
-	pop     {r0-r1}
+	pop     {r0,r4}
+
+	/* Move system_off back to r0 as return value */
+	mov	r0, r4
 
 	pop	{r4-r12, lr}
 	bx	lr
@@ -100,19 +104,25 @@ SECTION_FUNC(TEXT, arch_pm_s2ram_suspend)
 
 GTEXT(arch_pm_s2ram_resume)
 SECTION_FUNC(TEXT, arch_pm_s2ram_resume)
-wait:
-	b wait
+
 	/*
 	 * Check if reset occurred after suspending to RAM.
 	 */
-	mov 	r5, lr
+	cpsid i
+	ldr 	r1, =_cpu_link_reg
+	str	r14, [r1]
+	//mov 	r5, lr
 	bl 	pm_s2ram_mark_check_and_clear
-	mov 	lr, r5
+	ldr 	r1, =_cpu_link_reg
+	ldr	r14, [r1]
+	//mov 	lr, r5
 	cmp     r0, #0x1
 	beq     resume
+	cpsie i
 	bx      lr
 
 resume:
+
 	/*
 	 * Restore the CPU context
 	 */
@@ -158,4 +168,5 @@ resume:
 	 * Set the return value and return
 	 */
 	mov	r0, #0
+	cpsie i
 	bx	lr
