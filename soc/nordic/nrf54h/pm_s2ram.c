@@ -132,20 +132,46 @@ void pm_s2ram_mark_set(void)
 	/* empty */
 }
 
-bool pm_s2ram_mark_check_and_clear(void)
+bool __attribute__((naked)) pm_s2ram_mark_check_and_clear(void)
 {
-	bool unretained_wake;
-	bool restore_valid;
-	uint32_t reset_reason = nrf_resetinfo_resetreas_local_get(NRF_RESETINFO);
+	register uint32_t resetinfo_addr __asm__("r2") = (uint32_t)NRF_RESETINFO;
+	register uint32_t resetreas_offs __asm__("r3") = offsetof(NRF_RESETINFO_Type, RESETREAS.LOCAL);
+	register uint32_t resetreas_unretained_mask __asm__("r6") = NRF_RESETINFO_RESETREAS_LOCAL_UNRETAINED_MASK;
+	register uint32_t restorevalid_offs __asm__("r7") = offsetof(NRF_RESETINFO_Type, RESTOREVALID);
+	register uint32_t restorevalid_present_mask __asm__("r8") = RESETINFO_RESTOREVALID_RESTOREVALID_Msk;
+	__asm__ volatile(
+		/* Set return value to 0 */
+		"mov	r0, #0\n"
 
-	if (reset_reason != NRF_RESETINFO_RESETREAS_LOCAL_UNRETAINED_MASK) {
-		return false;
-	}
-	unretained_wake = reset_reason & NRF_RESETINFO_RESETREAS_LOCAL_UNRETAINED_MASK;
-	nrf_resetinfo_resetreas_local_set(NRF_RESETINFO, 0);
+		/* Load and check RESETREAS register */
+		"ldr	r1, [%[resetinfo_addr], %[resetreas_offs]]\n"
+		"cmp	r1, %[resetreas_unretained_mask]\n"
 
-	restore_valid = nrf_resetinfo_restore_valid_check(NRF_RESETINFO);
-	nrf_resetinfo_restore_valid_set(NRF_RESETINFO, false);
+		"bne	exit\n"
 
-	return (unretained_wake & restore_valid) ? true : false;
+		/* Clear RESETREAS register */
+		"str	r0, [%[resetinfo_addr], %[resetreas_offs]]\n"
+
+		/* Load RESTOREVALID register */
+		"ldr	r1, [%[resetinfo_addr], %[restorevalid_offs]]\n"
+
+		/* Clear RESTOREVALID */
+		"str	r0, [%[resetinfo_addr], %[restorevalid_offs]]\n"
+
+		/* Check RESTOREVALID register */
+		"cmp	r1, %[restorevalid_present_mask]\n"
+		"bne	exit\n"
+
+		/* Set return value to 1 */
+		"mov	r0, #1\n"
+
+		"exit:\n"
+		"bx	lr\n"
+		:
+		: [resetinfo_addr] "r"(resetinfo_addr),
+		  [resetreas_offs] "r"(resetreas_offs),
+		  [resetreas_unretained_mask] "r"(resetreas_unretained_mask),
+		  [restorevalid_offs] "r"(restorevalid_offs),
+		  [restorevalid_present_mask] "r"(restorevalid_present_mask)
+		: "r0", "r1", "r4", "r5", "memory");
 }

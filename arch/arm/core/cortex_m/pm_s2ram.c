@@ -52,7 +52,7 @@ bool __attribute__((naked)) pm_s2ram_mark_check_and_clear(void)
 		"bx lr\n"
 		:
 		: [_magic_val] "r"(MAGIC), [_marker] "r"(&marker)
-		: "r0", "r1", "r3", "r4", "memory");
+		: "r0", "r1", "r2", "r3", "memory");
 }
 
 #endif /* CONFIG_PM_S2RAM_CUSTOM_MARKING */

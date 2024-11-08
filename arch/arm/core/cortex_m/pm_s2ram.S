@@ -19,6 +19,7 @@ _ASM_FILE_PROLOGUE
 GTEXT(pm_s2ram_mark_set)
 GTEXT(pm_s2ram_mark_check_and_clear)
 GDATA(_cpu_context)
+GDATA(_)
 
 SECTION_FUNC(TEXT, arch_pm_s2ram_suspend)
 	/*
@@ -83,15 +84,15 @@ SECTION_FUNC(TEXT, arch_pm_s2ram_suspend)
 	 * not successful (in r0 the return value).
 	 */
 
+	/* Move system_off back to r0 as return value */
+	mov	r0, r4
+
 	/*
 	 * Reset the marking of suspend to RAM, return is ignored.
 	 */
-	mov 	r1, lr
+	push    {r0-r1}
 	bl	pm_s2ram_mark_check_and_clear
-	mov 	lr, r1
-
-	/* Move system_off back to r0 as return value */
-	mov	r0, r4
+	pop     {r0-r1}
 
 	pop	{r4-r12, lr}
 	bx	lr
@@ -99,12 +100,14 @@ SECTION_FUNC(TEXT, arch_pm_s2ram_suspend)
 
 GTEXT(arch_pm_s2ram_resume)
 SECTION_FUNC(TEXT, arch_pm_s2ram_resume)
+wait:
+	b wait
 	/*
 	 * Check if reset occurred after suspending to RAM.
 	 */
-	mov 	r1, lr
+	mov 	r5, lr
 	bl 	pm_s2ram_mark_check_and_clear
-	mov 	lr, r1
+	mov 	lr, r5
 	cmp     r0, #0x1
 	beq     resume
 	bx      lr
