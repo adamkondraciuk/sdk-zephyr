@@ -108,7 +108,6 @@ SECTION_FUNC(TEXT, arch_pm_s2ram_resume)
 	/*
 	 * Check if reset occurred after suspending to RAM.
 	 */
-	cpsid i
 	ldr 	r1, =_cpu_link_reg
 	str	r14, [r1]
 	//mov 	r5, lr
@@ -118,7 +117,6 @@ SECTION_FUNC(TEXT, arch_pm_s2ram_resume)
 	//mov 	lr, r5
 	cmp     r0, #0x1
 	beq     resume
-	cpsie i
 	bx      lr
 
 resume:
@@ -168,5 +166,4 @@ resume:
 	 * Set the return value and return
 	 */
 	mov	r0, #0
-	cpsie i
 	bx	lr

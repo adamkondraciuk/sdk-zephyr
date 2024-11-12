@@ -134,24 +134,22 @@ void pm_s2ram_mark_set(void)
 static volatile bool wait = true;
 bool __attribute__((naked)) pm_s2ram_mark_check_and_clear(void)
 {
-
-	bool unretained_wake;
 	bool restore_valid;
-	register bool __used result __asm__("r0");
+	register bool __used result __asm__("r0") = false;
 	uint32_t reset_reason = nrf_resetinfo_resetreas_local_get(NRF_RESETINFO);
 
 	if (reset_reason != NRF_RESETINFO_RESETREAS_LOCAL_UNRETAINED_MASK) {
-		return false;
+		__asm__ volatile("bx lr\n"
+				 :
+				 :[result] "r"(result)
+				 );
 	}
-	unretained_wake = reset_reason & NRF_RESETINFO_RESETREAS_LOCAL_UNRETAINED_MASK;
 	nrf_resetinfo_resetreas_local_set(NRF_RESETINFO, 0);
 
 	restore_valid = nrf_resetinfo_restore_valid_check(NRF_RESETINFO);
 	nrf_resetinfo_restore_valid_set(NRF_RESETINFO, false);
 
-
-	//return (unretained_wake & restore_valid) ? true : false;
-	result = unretained_wake & restore_valid;
+	result = restore_valid;
 	__asm__ volatile("bx lr\n"
 			 :
 			 :[result] "r"(result)

@@ -29,30 +29,17 @@ void pm_s2ram_mark_set(void)
 
 bool __attribute__((naked)) pm_s2ram_mark_check_and_clear(void)
 {
-	__asm__ volatile(
-		/* Set return value to 0 */
-		"mov	r0, #0\n"
+	register bool __used result __asm__("r0") = false;
 
-		/* Check the marker */
-		"ldr	r3, [%[_marker]]\n"
-		"cmp	r3, %[_magic_val]\n"
-		"bne	exit\n"
+	if (marker == MAGIC) {
+		marker = 0;
+		result = true;
+	}
 
-		/*
-		 * Reset the marker
-		 */
-		"str	r0, [%[_marker]]\n"
-
-		/*
-		 * Set return value to 1
-		 */
-		"mov	r0, #1\n"
-
-		"exit:\n"
-		"bx lr\n"
-		:
-		: [_magic_val] "r"(MAGIC), [_marker] "r"(&marker)
-		: "r0", "r1", "r2", "r3", "memory");
+	__asm__ volatile("bx lr\n"
+			 :
+			 :[result] "r"(result)
+			 );
 }
 
 #endif /* CONFIG_PM_S2RAM_CUSTOM_MARKING */
