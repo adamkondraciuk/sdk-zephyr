@@ -18,7 +18,9 @@
 #include <zephyr/sys/poweroff.h>
 #include <zephyr/sys/util.h>
 
-#if defined(CONFIG_GRTC_WAKEUP_ENABLE)
+#define TEST_WFI 1
+
+#if defined(CONFIG_GRTC_WAKEUP_ENABLE) || TEST_WFI
 #include <zephyr/drivers/timer/nrf_grtc_timer.h>
 #define DEEP_SLEEP_TIME_S 2
 #endif
@@ -102,11 +104,13 @@ int main(void)
 	printf("Entering system off; change signal level at comparator input to restart\n");
 #endif
 
+#if !TEST_WFI
 	rc = pm_device_action_run(cons, PM_DEVICE_ACTION_SUSPEND);
 	if (rc < 0) {
 		printf("Could not suspend console (%d)\n", rc);
 		return 0;
 	}
+#endif
 
 	if (IS_ENABLED(CONFIG_APP_USE_RETAINED_MEM)) {
 		/* Update the retained state */
@@ -114,8 +118,23 @@ int main(void)
 		retained_update();
 	}
 
+#if !TEST_WFI
 	hwinfo_clear_reset_cause();
 	sys_poweroff();
 
+#else
+	printk("press sw2 or wait 5s\n");
+	int32_t chan = z_nrf_grtc_timer_chan_alloc();
+	uint64_t now = z_nrf_grtc_timer_read();
+	printk("[%d] now is %llu\n", chan, now);
+	z_nrf_grtc_timer_set(chan, now + 5000000, NULL, NULL);
+
+	__set_BASEPRI(0);
+	__ISB();
+	__DSB();
+	__WFI();
+	now = z_nrf_grtc_timer_read();
+	printk("woken up at %llu\n", now);
+#endif
 	return 0;
 }
