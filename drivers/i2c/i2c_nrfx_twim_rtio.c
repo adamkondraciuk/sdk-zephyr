@@ -250,7 +250,7 @@ int i2c_nrfx_twim_rtio_init(const struct device *dev)
 	static const struct i2c_nrfx_twim_rtio_config twim_##idx##z_config = {                     \
 		.common =                                                                          \
 			{                                                                          \
-				.twim = NRFX_TWIM_INSTANCE(idx),                                   \
+				.twim = NRFX_TWIM_INSTANCE(NRF_TWIM##idx),                                   \
 				.twim_config =                                                     \
 					{                                                          \
 						.skip_gpio_cfg = true,                             \

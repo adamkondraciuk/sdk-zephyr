@@ -57,6 +57,7 @@
 	pinctrl-names = "default", "sleep";
 	zephyr,concat-buf-size = <256>;
 	status = "okay";
+	clock-frequency = <250000>;
 };
 
 &i2c22 {
