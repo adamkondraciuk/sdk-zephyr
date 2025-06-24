@@ -9,19 +9,16 @@
 #include <zephyr/drivers/i2s.h>
 #include <zephyr/sys/iterable_sections.h>
 
-#define SAMPLE_NO 64
+#define I2S_SAMPLES_NUM 48
+#define SAMPLE_NO (I2S_SAMPLES_NUM * 2)
 
 /* The data represent a sine wave */
 static int16_t data[SAMPLE_NO] = {
-	  3211,   6392,   9511,  12539,  15446,  18204,  20787,  23169,
-	 25329,  27244,  28897,  30272,  31356,  32137,  32609,  32767,
-	 32609,  32137,  31356,  30272,  28897,  27244,  25329,  23169,
-	 20787,  18204,  15446,  12539,   9511,   6392,   3211,      0,
-	 -3212,  -6393,  -9512, -12540, -15447, -18205, -20788, -23170,
-	-25330, -27245, -28898, -30273, -31357, -32138, -32610, -32767,
-	-32610, -32138, -31357, -30273, -28898, -27245, -25330, -23170,
-	-20788, -18205, -15447, -12540,  -9512,  -6393,  -3212,     -1,
-};
+	0,  0,  1,  1,  2,  2,  3,  3,  4,  4,  5,  5,  6,  6,  7,  7,  8,  8,  9,  9,
+	10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15, 16, 16, 17, 17, 18, 18, 19, 19,
+	20, 20, 21, 21, 22, 22, 23, 23, 24, 24, 25, 25, 26, 26, 27, 27, 28, 28, 29, 29,
+	30, 30, 31, 31, 32, 32, 33, 33, 34, 34, 35, 35, 36, 36, 37, 37, 28, 38, 39, 39,
+	40, 40, 41, 41, 42, 42, 43, 43, 44, 44, 0xbeef, 0xbeef, 0xdead, 0xdead, -1, -1};
 
 /* Fill buffer with sine wave on left channel, and sine wave shifted by
  * 90 degrees on right channel. "att" represents a power of two to attenuate
@@ -29,19 +26,11 @@ static int16_t data[SAMPLE_NO] = {
  */
 static void fill_buf(int16_t *tx_block, int att)
 {
-	int r_idx;
-
-	for (int i = 0; i < SAMPLE_NO; i++) {
-		/* Left channel is sine wave */
-		tx_block[2 * i] = data[i] / (1 << att);
-		/* Right channel is same sine wave, shifted by 90 degrees */
-		r_idx = (i + (ARRAY_SIZE(data) / 4)) % ARRAY_SIZE(data);
-		tx_block[2 * i + 1] = data[r_idx] / (1 << att);
-	}
+	memcpy(tx_block, data, sizeof(data));
 }
 
 #define NUM_BLOCKS 20
-#define BLOCK_SIZE (2 * sizeof(data))
+#define BLOCK_SIZE (sizeof(data))
 
 #ifdef CONFIG_NOCACHE_MEMORY
 	#define MEM_SLAB_CACHE_ATTR __nocache

@@ -349,6 +349,8 @@ static void data_handler(const struct device *dev,
 	}
 
 	if (stop_transfer) {
+		struct i2s_config * i2s_cfg = &drv_data->tx.cfg;
+		k_busy_wait(3 * 1000000 / i2s_cfg->frame_clk_freq);
 		nrfx_i2s_stop(drv_data->p_i2s);
 	} else if (status & NRFX_I2S_STATUS_NEXT_BUFFERS_NEEDED) {
 		nrfx_i2s_buffers_t next = { 0 };
