@@ -36,6 +36,20 @@ typedef void (*z_nrf_grtc_timer_compare_handler_t)(int32_t id, uint64_t expire_t
  */
 int32_t z_nrf_grtc_timer_chan_alloc(void);
 
+/** @brief Allocate an extended GRTC capture/compare channel.
+ *
+ * Extended channels functionality is not available for standard
+ * compare channels allocated by @ref z_nrf_grtc_timer_chan_alloc.
+ * Currently, the only supported extended feature is interval mode,
+ * which is available for channels allocated by
+ * @ref z_nrf_grtc_timer_extended_chan_alloc only.
+ * For more information, see @ref z_nrf_grtc_timer_interval_set.
+ *
+ * @retval >=0 Non-negative indicates allocated channel ID.
+ * @retval -ENOMEM if channel cannot be allocated.
+ */
+int32_t z_nrf_grtc_timer_extended_chan_alloc(void);
+
 /** @brief Free GRTC capture/compare channel.
  *
  * @param chan Previously allocated channel ID.
@@ -123,6 +137,32 @@ int z_nrf_grtc_timer_compare_read(int32_t chan, uint64_t *val);
  * @retval -EPERM if either channel is unavailable or SYSCOUNTER is not running.
  */
 int z_nrf_grtc_timer_set(int32_t chan, uint64_t target_time,
+			 z_nrf_grtc_timer_compare_handler_t handler, void *user_data);
+
+/** @brief  Set interval mode with the given period.
+ *
+ * This function enables interval mode, which generates periodic CC events
+ * without any software interaction. Events are generated every
+ * @p interval_value GRTC ticks. The user-provided @p handler function is called
+ * on each event. The first event is generated after @p interval_value.
+ *
+ * Using this function can be used only wit extended channels
+ * allocated by @ref z_nrf_grtc_timer_extended_chan_alloc. The number of extended
+ * channels is defined by the `extended-channels` property of the `grtc` DTS node
+ * and depends on the SoC hardware configuration.
+ *
+ * @param chan Channel ID.
+ *
+ * @param interval_value Relative interval time.
+ *
+ * @param handler User function called in the context of the GRTC interrupt.
+ *
+ * @param user_data Data passed to the handler.
+ *
+ * @retval 0 if the compare channel was set successfully.
+ * @retval -EPERM if either channel is unavailable or SYSCOUNTER is not running.
+ */
+int z_nrf_grtc_timer_interval_set(int32_t chan, uint32_t interval_value,
 			 z_nrf_grtc_timer_compare_handler_t handler, void *user_data);
 
 /** @brief Abort a timer requested with z_nrf_grtc_timer_set().

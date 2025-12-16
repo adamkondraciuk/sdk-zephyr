@@ -21,6 +21,10 @@ LOG_MODULE_REGISTER(test, 1);
 	((uint64_t)sys_clock_hw_cycles_per_sec() / (uint64_t)CONFIG_SYS_CLOCK_TICKS_PER_SEC)
 #define TIMER_COUNT_TIME_MS 10
 #define WAIT_FOR_TIMER_EVENT_TIME_MS TIMER_COUNT_TIME_MS + 5
+#define NUMBER_OF_INTERVAL_EVENTS 10
+#define INTERVAL_COUNT_TIME_MS 50
+
+BUILD_ASSERT(INTERVAL_COUNT_TIME_MS * 1000 <= UINT16_MAX, "Too large value for test_timer_interval_mode.");
 
 static volatile uint8_t compare_isr_call_counter;
 
@@ -30,6 +34,16 @@ static void timer_compare_interrupt_handler(int32_t id, uint64_t expire_time, vo
 	compare_isr_call_counter++;
 	TC_PRINT("Compare value reached, user data: '%s'\n", (char *)user_data);
 	TC_PRINT("Call counter: %d\n", compare_isr_call_counter);
+}
+
+/* GRTC timer compare interrupt handler */
+static void timer_interval_interrupt_handler(int32_t id, uint64_t expire_time, void *user_data)
+{
+	(void)id;
+	(void)expire_time;
+	(void)user_data;
+
+	compare_isr_call_counter++;
 }
 
 ZTEST(nrf_grtc_timer, test_get_ticks)
@@ -157,6 +171,44 @@ ZTEST(nrf_grtc_timer, test_timer_abort_in_compare_mode)
 
 	k_sleep(K_MSEC(WAIT_FOR_TIMER_EVENT_TIME_MS));
 	zassert_equal(compare_isr_call_counter, 0, "Compare isr call counter: %d",
+		      compare_isr_call_counter);
+	z_nrf_grtc_timer_chan_free(channel);
+}
+
+ZTEST(nrf_grtc_timer, test_timer_interval_mode)
+{
+	int err;
+	uint64_t test_ticks = 0;
+	char user_data[] = "test_timer_interval_mode\n";
+	int32_t channel = z_nrf_grtc_timer_extended_chan_alloc();
+
+	TC_PRINT("Allocated GRTC channel %d\n", channel);
+	if (channel < 0) {
+		TC_PRINT("Failed to allocate GRTC channel, chan=%d\n", channel);
+		ztest_test_fail();
+	}
+
+	compare_isr_call_counter = 0;
+	test_ticks = INTERVAL_COUNT_TIME_MS * 1000;
+	err = z_nrf_grtc_timer_interval_set(channel, test_ticks, timer_interval_interrupt_handler,
+				   (void *)user_data);
+	zassert_equal(err, 0, "z_nrf_grtc_timer_set raised an error: %d", err);
+
+	/* Wait for `NUMBER_OF_INTERVAL_EVENTS` events, each every `test_ticks`. */
+	k_busy_wait(NUMBER_OF_INTERVAL_EVENTS * test_ticks + test_ticks / 2);
+
+	z_nrf_grtc_timer_abort(channel);
+	TC_PRINT("Interval events count: %d\n", compare_isr_call_counter);
+
+	/* Wait and check if `z_nrf_grtc_timer_abort` stopped events generation. */
+	test_ticks = 0;
+	k_busy_wait(NUMBER_OF_INTERVAL_EVENTS);
+	TC_PRINT("Interval events count: %d\n", 0);
+
+	TC_PRINT("Compare event register address: %X\n",
+		 z_nrf_grtc_timer_compare_evt_address_get(channel));
+
+	zassert_equal(compare_isr_call_counter, NUMBER_OF_INTERVAL_EVENTS, "Compare isr call counter: %d",
 		      compare_isr_call_counter);
 	z_nrf_grtc_timer_chan_free(channel);
 }
