@@ -45,6 +45,22 @@
 			clocks = <&hfpll>;
 			riscv,isa = "rv32emc";
 			nordic,bus-width = <32>;
+			cpu-power-states = <&sleep &hibernate>;
+		};
+		power-states {
+			sleep: sleep {
+				compatible = "zephyr,power-state";
+				power-state-name = "suspend-to-idle";
+				min-residency-us = <50000>;
+				exit-latency-us = <30>;
+			};
+			// substate-id = <0>; is reserved for "idle", cache powered on
+			hibernate: hibernate {
+				compatible = "zephyr,power-state";
+				power-state-name = "suspend-to-ram";
+				min-residency-us = <100000>;
+				exit-latency-us = <100>;
+			};
 		};
 	};
 

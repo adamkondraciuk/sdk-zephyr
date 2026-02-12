@@ -14,8 +14,9 @@ if(NOT CONFIG_TFM_PARTITION_PLATFORM)
   zephyr_library_sources_ifdef(CONFIG_ARM reboot.c)
 endif()
 
-zephyr_library_sources_ifdef(CONFIG_POWEROFF poweroff.c)
+
 if(CONFIG_ARM)
+  zephyr_library_sources_ifdef(CONFIG_POWEROFF poweroff.c)
   zephyr_library_sources_ifdef(CONFIG_NRF_PLATFORM_HALTIUM soc_lrcconf.c)
 endif()
 
