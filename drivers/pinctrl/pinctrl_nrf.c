@@ -456,7 +456,7 @@ int pinctrl_configure_pins(const pinctrl_soc_pin_t *pins, uint8_t pin_cnt,
 #if NRF_GPIO_HAS_SEL && NRF_GPIO_HAS_CTRLSEL_GRTC
 			nrf_gpio_pin_control_select(psel, NRF_GPIO_PIN_SEL_GRTC);
 #endif
-			dir = NRF_GPIO_PIN_DIR_OUTPUT;
+			 dir = NRF_GPIO_PIN_DIR_OUTPUT;
 			input = NRF_GPIO_PIN_INPUT_DISCONNECT;
 			break;
 #endif /* defined(NRF_GRTC_CLKOUT_FAST) */
