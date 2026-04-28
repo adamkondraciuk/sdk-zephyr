@@ -99,7 +99,7 @@ ZTEST_USER(sleep, test_usleep)
 			break;
 		}
 	}
-
+	printf("LB: %u, UB: %u, E: %llu", LOWER_BOUND_MS, UPPER_BOUND_MS, elapsed_ms);
 	zassert_true(elapsed_ms >= LOWER_BOUND_MS, "short sleep");
 	zassert_true(elapsed_ms <= UPPER_BOUND_MS, "overslept");
 }
