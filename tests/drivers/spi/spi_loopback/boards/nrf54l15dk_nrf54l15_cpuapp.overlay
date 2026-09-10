@@ -44,7 +44,11 @@
 	pinctrl-names = "default", "sleep";
 	overrun-character = <0x00>;
 	zephyr,pm-device-runtime-auto;
-	cs-gpios = <&gpio1 8 0>;
+	/*
+	 * CS is active low so it can drive the CSN input of an external
+	 * nRF SPIS slave (master P2.10 -> slave P2.10).
+	 */
+	cs-gpios = <&gpio2 10 GPIO_ACTIVE_LOW>;
 
 	slow@0 {
 		compatible = "test-spi-loopback-slow";
