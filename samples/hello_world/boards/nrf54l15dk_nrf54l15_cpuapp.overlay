@@ -1,0 +1,29 @@
+&pinctrl {
+    spi00_default: spi00_default {
+        group1 {
+            psels = <NRF_PSEL(SPIS_SCK, 2, 1)>,  /* SCK Input */
+                    <NRF_PSEL(SPIS_MOSI, 2, 4)>, /* MOSI Input */
+                    <NRF_PSEL(SPIS_MISO, 2, 2)>, /* MISO Output */
+                    <NRF_PSEL(SPIS_CSN, 2, 5)>;  /* CS Input - Must be here! */
+        };
+    };
+    spi00_sleep: spi00_sleep {
+        group1 {
+            psels = <NRF_PSEL(SPIS_SCK, 2, 1)>,  /* SCK Input */
+                    <NRF_PSEL(SPIS_MOSI, 2, 4)>, /* MOSI Input */
+                    <NRF_PSEL(SPIS_MISO, 2, 2)>, /* MISO Output */
+                    <NRF_PSEL(SPIS_CSN, 2, 5)>;  /* CS Input - Must be here! */
+        };
+    };
+};
+
+&spi00 {
+    status = "okay";
+    compatible = "nordic,nrf-spis";
+    pinctrl-0 = <&spi00_default>;
+    pinctrl-1 = <&spi00_sleep>;
+    pinctrl-names = "default","sleep";
+    def-char = <0x00>;
+    /delete-property/ rx-delay-supported;
+    /delete-property/ rx-delay;
+};
