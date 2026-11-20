@@ -11,21 +11,25 @@
 BUILD_ASSERT(DT_NODE_EXISTS(DT_PATH(cpus)),
 	     "cpus node not defined in Devicetree");
 
-#define DEFINE_CPU_STATES(n) \
-	static const struct pm_state_info pmstates_##n[] \
-		= PM_STATE_INFO_LIST_FROM_DT_CPU(n);
-#define CPU_STATE_REF(n) pmstates_##n
+#define IS_CPU_NODE(n) DT_NODE_HAS_PROP(n, device_type)
 
-DT_FOREACH_CHILD_STATUS_OKAY(DT_PATH(cpus), DEFINE_CPU_STATES);
+#define DEFINE_CPU_STATES(n)                                              \
+	IF_ENABLED(IS_CPU_NODE(n),                                        \
+		   (static const struct pm_state_info pmstates_##n[]      \
+			    = PM_STATE_INFO_LIST_FROM_DT_CPU(n);))
+#define CPU_STATE_REF(n) IF_ENABLED(IS_CPU_NODE(n), (pmstates_##n,))
+#define CPU_NUM_STATES(n) IF_ENABLED(IS_CPU_NODE(n), (DT_NUM_CPU_POWER_STATES(n),))
+
+DT_FOREACH_CHILD_STATUS_OKAY(DT_PATH(cpus), DEFINE_CPU_STATES)
 
 /** CPU power states information for each CPU */
 static const struct pm_state_info *cpus_states[] = {
-	DT_FOREACH_CHILD_STATUS_OKAY_SEP(DT_PATH(cpus), CPU_STATE_REF, (,))
+	DT_FOREACH_CHILD_STATUS_OKAY(DT_PATH(cpus), CPU_STATE_REF)
 };
 
 /** Number of states for each CPU */
 static const uint8_t states_per_cpu[] = {
-	DT_FOREACH_CHILD_STATUS_OKAY_SEP(DT_PATH(cpus), DT_NUM_CPU_POWER_STATES, (,))
+	DT_FOREACH_CHILD_STATUS_OKAY(DT_PATH(cpus), CPU_NUM_STATES)
 };
 
 #define DEFINE_DISABLED_PM_STATE(node) \
